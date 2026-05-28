@@ -1,383 +1,1150 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>銀齡安心支持計畫</title>
-    <style>
-        :root {
-            --primary: #4A7C59;
-            --secondary: #68B0AB;
-            --accent: #FF8C42;
-            --bg-light: #F8F9FA;
-            --text-dark: #2F3E46;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>銀齡安心支持計畫 — 臺南市織英教育與公益協會</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E07828;
+    --orange-light: #F5A84B;
+    --orange-pale: #FDF0E3;
+    --green: #5A8A6A;
+    --green-light: #8AB89A;
+    --green-pale: #EDF5EF;
+    --cream: #FBF7F0;
+    --cream-dark: #F2EAD8;
+    --charcoal: #2C2A26;
+    --text-muted: #7A7060;
+    --text-mid: #4A4438;
+    --white: #FFFFFF;
+    --red-pale: #FDF0EE;
+    --red: #C0422A;
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
-        }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: #FFF;
-        }
+  html { scroll-behavior: smooth; }
 
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 20px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(251,247,240,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .nav-logo-link:hover {
+    opacity: 0.85;
+  }
+  .association-logo {
+    width: auto;
+    height: 46px;
+    object-fit: contain;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+  .nav-logo span { display: block; font-size: 13px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
+  .nav-cta {
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #C86A1E; }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+  /* SECTIONS */
+  section { padding: 80px 20px; }
+  .container { max-width: 700px; margin: 0 auto; }
 
-        .logo-img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
+  /* LABELS */
+  .label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .label-orange { background: var(--orange-pale); color: var(--orange); }
+  .label-green { background: var(--green-pale); color: var(--green); }
 
-        .logo-text {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
+  /* HEADINGS */
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
+  h1 { font-size: clamp(34px, 8vw, 46px); font-weight: 700; color: var(--charcoal); }
+  h2 { font-size: clamp(28px, 6vw, 36px); font-weight: 600; color: var(--charcoal); }
+  h3 { font-size: 22px; font-weight: 600; color: var(--charcoal); }
+  .section-sub { font-size: 19px; color: var(--text-muted); margin-top: 14px; line-height: 1.8; }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
+  /* HERO */
+  #hero {
+    background: var(--charcoal);
+    padding: 100px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(224,120,40,0.15);
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(90,138,106,0.12);
+  }
+  #hero .container { position: relative; z-index: 1; }
+  #hero .label { background: rgba(224,120,40,0.2); color: var(--orange-light); }
+  #hero h1 { color: var(--white); }
+  #hero h1 em { font-style: normal; color: var(--orange-light); }
+  #hero .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 18px;
+    line-height: 1.8;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #C86A1E; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 14px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+  /* PROBLEM */
+  #problem { background: var(--white); }
+  .bridge-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 36px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+  }
+  .flow-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--cream-dark);
+    background: var(--white);
+  }
+  .flow-step-item:last-child { border-bottom: none; }
+  .flow-step-item.highlight-red { background: var(--red-pale); }
+  .flow-step-item.highlight-green { background: var(--green-pale); }
+  .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    color: var(--text-mid);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .highlight-red .step-num { background: #F5C5BB; color: var(--red); }
+  .highlight-green .step-num { background: #B8D9C2; color: var(--green); }
+  .step-text strong { display: block; font-size: 18px; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+  .step-text span { font-size: 16px; color: var(--text-muted); }
+  .highlight-red .step-text strong { color: var(--red); }
+  .highlight-green .step-text strong { color: var(--green); }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+  /* NUMBERS */
+  #numbers { background: var(--cream); }
+  .case-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  @media(min-width: 550px) { .case-cards { grid-template-columns: 1fr 1fr; } }
+  .case-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+  }
+  .case-card-header {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 16px 20px;
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .case-card-header span { display: block; font-family: var(--sans); font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  .case-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--cream-dark);
+    font-size: 16px;
+  }
+  .case-row:last-child { border-bottom: none; }
+  .case-row .label-text { color: var(--text-muted); }
+  .case-row .amount { font-weight: 500; color: var(--charcoal); }
+  .case-row.deduct .amount { color: #C0422A; }
+  .case-row.support .amount { color: var(--green); }
+  .case-row.result {
+    background: var(--green-pale);
+    font-weight: 500;
+  }
+  .case-row.result .label-text { color: var(--green); font-weight: 500; }
+  .case-row.result .amount { color: var(--green); font-size: 18px; }
+  .case-row.zero .amount { color: var(--green); font-size: 18px; }
 
-        .hero {
-            background: linear-gradient(135deg, rgba(74,124,89,0.1) 0%, rgba(104,176,171,0.1) 100%);
-            padding: 160px 20px 100px;
-            text-align: center;
-        }
+  /* WHAT WE FUND */
+  #fund { background: var(--white); }
+  .fund-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  @media(min-width: 550px) { .fund-cards { grid-template-columns: 1fr 1fr; } }
+  .fund-card {
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    border: 1px solid var(--cream-dark);
+  }
+  .fund-card.orange { background: var(--orange-pale); border-color: #F5C89A; }
+  .fund-card.green { background: var(--green-pale); border-color: #A8CEB4; }
+  .fund-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  .orange .fund-icon { background: rgba(224,120,40,0.15); }
+  .green .fund-icon { background: rgba(90,138,106,0.15); }
+  .fund-card h3 { font-size: 22px; margin-bottom: 10px; }
+  .orange h3 { color: var(--orange); }
+  .green h3 { color: var(--green); }
+  .fund-card p { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+  .fund-examples {
+    font-size: 15px;
+    color: var(--text-mid);
+    background: rgba(255,255,255,0.6);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    line-height: 1.8;
+  }
+  .subsidy-note {
+    margin-top: 28px;
+    background: var(--cream-dark);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .subsidy-note p { font-size: 16px; color: var(--text-mid); line-height: 1.7; }
+  .subsidy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .subsidy-table th {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .subsidy-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--cream-dark);
+    color: var(--text-mid);
+  }
+  .subsidy-table tr:last-child td { border-bottom: none; }
+  .subsidy-table tr:nth-child(even) td { background: rgba(255,255,255,0.5); }
+  .subsidy-table .amt { font-weight: 500; color: var(--charcoal); }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  /* 15% */
+  #fee { background: var(--cream); }
+  .fee-intro {
+    background: var(--charcoal);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 26px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .fee-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .fee-bar-fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 0;
+    letter-spacing: 0.05em;
+  }
+  .fee-85 { width: 85%; background: var(--orange); color: var(--white); }
+  .fee-15 { width: 15%; background: rgba(255,255,255,0.25); color: rgba(255,255,255,0.9); }
+  .fee-intro-text h3 { color: var(--white); font-size: 20px; margin-bottom: 10px; }
+  .fee-intro-text p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .fee-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  .fee-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--cream-dark);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .fee-item-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .fee-item h4 { font-size: 16px; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+  .fee-item p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
+  /* PROCESS */
+  #process { background: var(--white); }
+  .process-steps { margin-top: 36px; display: flex; flex-direction: column; gap: 0; }
+  .process-step {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    position: relative;
+  }
+  .process-step:last-child { border-bottom: none; }
+  .process-step-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--orange-pale);
+    color: var(--orange);
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .process-step:nth-child(3) .process-step-num,
+  .process-step:nth-child(4) .process-step-num,
+  .process-step:nth-child(5) .process-step-num {
+    background: var(--green-pale);
+    color: var(--green);
+  }
+  .process-step-body h4 { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
+  .process-step-body p { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
+  /* STORIES */
+  #stories { background: var(--cream); }
+  .stories-note { font-size: 14px; color: var(--text-muted); margin-top: 10px; }
+  .story-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  .story-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+  }
+  .story-top {
+    height: 6px;
+    background: var(--orange);
+  }
+  .story-card:nth-child(2) .story-top { background: var(--green); }
+  .story-body { padding: 26px; }
+  .story-tag {
+    display: inline-block;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .story-card:nth-child(1) .story-tag { background: var(--orange-pale); color: var(--orange); }
+  .story-card:nth-child(2) .story-tag { background: var(--green-pale); color: var(--green); }
+  .story-card .story-sim { font-size: 13px; color: var(--text-muted); float: right; margin-top: 4px; }
+  .story-body p { font-size: 17px; color: var(--text-mid); line-height: 1.8; }
+  .story-body .story-highlight {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-style: italic;
+    font-family: var(--serif);
+  }
+  .story-card:nth-child(1) .story-highlight { background: var(--orange-pale); color: #8B4A10; }
+  .story-card:nth-child(2) .story-highlight { background: var(--green-pale); color: #2D5E3A; }
 
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(255,140,66,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+  /* CYCLE */
+  #cycle { background: var(--charcoal); padding: 80px 20px; }
+  #cycle h2 { color: var(--white); }
+  #cycle .section-sub { color: rgba(255,255,255,0.6); }
+  .cycle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .cycle-node {
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cycle-node:nth-child(1) { background: rgba(224,120,40,0.15); border-color: rgba(224,120,40,0.3); }
+  .cycle-node:nth-child(2) { background: rgba(90,138,106,0.15); border-color: rgba(90,138,106,0.3); }
+  .cycle-node:nth-child(3) { background: rgba(90,138,106,0.15); border-color: rgba(90,138,106,0.3); }
+  .cycle-node:nth-child(4) { background: rgba(224,120,40,0.15); border-color: rgba(224,120,40,0.3); }
+  .cycle-node-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+  .cycle-node h4 { font-size: 17px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
+  .cycle-node p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .cycle-arrow {
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 24px;
+    margin: 8px 0;
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .cycle-arrow::before, .cycle-arrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,140,66,0.4);
-        }
+  /* PLANS */
+  #plans { background: var(--cream); }
+  .plans-note {
+    margin-top: 12px;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    border: 1px solid var(--cream-dark);
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .plans-note strong { color: var(--charcoal); }
+  .plan-cards { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
+  .plan-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--cream-dark);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .plan-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,42,38,0.08); }
+  .plan-body { padding: 26px; }
+  .plan-name { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--charcoal); }
+  .plan-price {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--orange);
+    margin: 10px 0 6px;
+  }
+  .plan-price span { font-size: 16px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
+  .plan-desc { font-size: 16px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
+  .plan-breakdown {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    margin-bottom: 22px;
+  }
+  .plan-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 6px 0;
+  }
+  .plan-breakdown-row .label-text { color: var(--text-muted); }
+  .plan-breakdown-row .label-value { font-weight: 500; color: var(--charcoal); }
+  .plan-breakdown-row .label-value.orange { color: var(--orange); }
+  .plan-breakdown-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 10px 0; }
+  .plan-cta {
+    display: block;
+    text-align: center;
+    background: var(--charcoal);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .plan-cta:hover { opacity: 0.85; }
+  
+  /* 💡 付款說明區塊樣式優化 — 防止標點符號落單 */
+  .payment-note {
+    margin-top: 28px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    border: 1px solid var(--cream-dark);
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .payment-note strong { color: var(--charcoal); display: block; margin-bottom: 8px; font-size: 17px; }
+  .payment-note p {
+    word-break: keep-all; /* 防止亞洲中文字元在不恰當的地方斷行 */
+  }
+  .nobrk {
+    white-space: nowrap; /* 智慧保護：強制包裹內的字詞與標點絕對不拆散斷行 */
+  }
 
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* CONTACT */
+  #contact { background: var(--white); }
+  .contact-intro {
+    font-family: var(--serif);
+    font-size: clamp(22px, 5vw, 26px);
+    color: var(--charcoal);
+    line-height: 1.5;
+    margin: 20px 0 36px;
+  }
+  .contact-intro em { font-style: normal; color: var(--orange); }
+  
+  .contact-items { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 18px; 
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--charcoal);
+    border: 1px solid var(--cream-dark);
+    transition: border-color 0.2s, background 0.2s;
+    min-height: 96px;
+  }
+  .contact-item:hover { border-color: var(--orange); background: var(--orange-pale); }
+  .contact-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .contact-icon.phone { background: var(--orange-pale); }
+  .contact-icon.email { background: var(--cream-dark); }
+  .contact-icon.line { background: #D9F5D9; }
+  .contact-icon.addr { background: var(--green-pale); }
+  .contact-text { flex: 1; }
+  .contact-text strong { display: block; font-size: 14px; color: var(--text-muted); font-weight: 400; margin-bottom: 2px; }
+  .contact-text span { font-size: 16px; font-weight: 500; color: var(--charcoal); }
+  
+  .contact-line-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .contact-qrcode {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    border: 1px solid var(--cream-dark);
+    background: var(--white);
+    padding: 2px;
+    border-radius: 6px;
+  }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 15px;
-        }
+  @media(min-width: 500px) {
+    .contact-items {
+      grid-template-columns: 1fr 1fr;
+    }
+    .contact-item.pc-no-click {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .contact-item.pc-no-click:hover {
+      border-color: var(--cream-dark);
+      background: var(--cream);
+    }
+  }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
+  @media(max-width: 499px) {
+    .contact-item.pc-no-click {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+  }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  footer p { font-size: 15px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+  footer strong { color: rgba(255,255,255,0.7); font-weight: 500; }
 
-        .service-card {
-            background: var(--bg-light);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-            border-top: 4px solid var(--secondary);
-        }
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; }
+  .fade-up.visible { animation: fadeUp 0.5s ease forwards; }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .features-list li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .contact-section {
-            background-color: var(--bg-light);
-            max-width: 100%;
-            border-radius: 0;
-        }
-
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #DDD;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .submit-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #385E43;
-        }
-
-        footer {
-            background-color: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            section {
-                padding: 60px 20px;
-            }
-        }
-    </style>
+  /* UTIL */
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+</style>
 </head>
-<body>
+<body id="top">
 
-    <header>
-        <nav class="nav-container">
-            <div class="logo-area">
-                <img src="logo.png" alt="銀齡安心支持計畫標誌" class="logo-img">
-                <span class="logo-text">銀齡安心支持計畫</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">首頁</a></li>
-                <li><a href="#services">核心服務</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav>
+  <a href="#top" class="nav-logo-link">
+    <img src="logo.png" alt="協會Logo" class="association-logo">
+    <div class="nav-logo">
+      銀齡安心支持計畫
+      <span>臺南市織英教育與公益協會</span>
+    </div>
+  </a>
+  <a href="#contact" class="nav-cta">聯絡我們</a>
+</nav>
 
-    <div id="home" class="hero">
-        <div class="hero-content">
-            <h1>陪伴銀髮歲月，得享安心生活</h1>
-            <p>我們提供全方位的長者支持服務，從生活陪伴、健康促進到安全防護，致力於為長輩打造更有尊嚴、更快樂的樂齡生活環境。</p>
-            <a href="#contact" class="cta-btn">了解更多服務</a>
+<section id="hero">
+  <div class="container">
+    <div class="label">銀齡安心支持計畫</div>
+    <h1>把<em>安全</em>，補進<br>長者每天生活的地方</h1>
+    <p class="hero-sub">
+      政府補助之後，仍有一段自付缺口，讓許多低收入戶、中低收入戶長者無法及時取得必要的輔具與居家環境改善。<br>
+      您的支持，正是補上那段缺口的力量。
+    </p>
+    <div class="hero-ctas">
+      <a href="#plans" class="btn-primary">了解合作方式</a>
+      <a href="#contact" class="btn-outline">立即聯絡我們</a>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="container fade-up">
+    <div class="label label-orange">問題所在</div>
+    <h2>有時候，差的只是<br>及時的一點支持</h2>
+    <p class="section-sub">補助制度雖然存在，但政府補助核定後，家庭仍須自行負擔一段差額。這段差額，往往是長者取得必要資源的最後障礙。</p>
+    <div class="bridge-flow mt-24">
+      <div class="flow-step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>個管師評估需求</strong>
+          <span>由專業個管師實地評估長者所需輔具或環改項目</span>
         </div>
+      </div>
+      <div class="flow-step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>政府補助核定</strong>
+          <span>依長照制度申請補助，等待核定通過</span>
+        </div>
+      </div>
+      <div class="flow-step-item highlight-red">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>家庭仍須自付差額</strong>
+          <span>補助後仍有一段自付缺口，許多家庭因此延遲或放棄必要資源</span>
+        </div>
+      </div>
+      <div class="flow-step-item highlight-green">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>本計畫補足缺口</strong>
+          <span>協助補上自付額，讓長者即時取得所需資源</span>
+        </div>
+      </div>
+      <div class="flow-step-item">
+        <div class="step-num">5</div>
+        <div class="step-text">
+          <strong>完成輔具配置或居家環改</strong>
+          <span>長者安全、安心家中老化</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="container fade-up">
+    <div class="label label-orange">真實缺口</div>
+    <h2>數字背後，是每一個<br>被卡住的家庭</h2>
+    <p class="section-sub">政府補助後，缺口依然真實存在。以下是兩個典型案例的費用對比。</p>
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card-header">
+          低收入戶
+          <span>環改案例 · 扶手／面盆／拉門</span>
+        </div>
+        <div class="case-row"><span class="label-text">總費用</span><span class="amount">30,000 元</span></div>
+        <div class="case-row deduct"><span class="label-text">政府補助</span><span class="amount">－11,200 元</span></div>
+        <div class="case-row"><span class="label-text">家庭自付缺口</span><span class="amount" style="color:#C0422A;font-weight:600;">18,800 元</span></div>
+        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－10,000 元</span></div>
+        <div class="case-row result"><span class="label-text">最後負擔</span><span class="amount">8,800 元</span></div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-header">
+          中低收入戶
+          <span>環改案例 · 扶手／浴室防滑</span>
+        </div>
+        <div class="case-row"><span class="label-text">總費用</span><span class="amount">5,800 元</span></div>
+        <div class="case-row deduct"><span class="label-text">政府補助</span><span class="amount">－2,730 元</span></div>
+        <div class="case-row"><span class="label-text">家庭自付缺口</span><span class="amount" style="color:#C0422A;font-weight:600;">3,070 元</span></div>
+        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－3,070 元</span></div>
+        <div class="case-row result zero"><span class="label-text">最後負擔</span><span class="amount">0 元 ✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fund">
+  <div class="container fade-up">
+    <div class="label label-green">補助內容</div>
+    <h2>您的支持，<br>具體用在哪裡？</h2>
+    <p class="section-sub">計畫補助兩大類型，讓長者在熟悉的家中更安全、更有尊嚴地生活。</p>
+    <div class="fund-cards">
+      <div class="fund-card orange">
+        <div class="fund-icon">♿</div>
+        <h3>輔具補助</h3>
+        <p>協助長者日常生活與行動安全，減少跌倒風險，維持日常活動能力。</p>
+        <div class="fund-examples">如：輪椅、助行器、便盆椅、移位輔具</div>
+      </div>
+      <div class="fund-card green">
+        <div class="fund-icon">🏠</div>
+        <h3>居家環改</h3>
+        <p>改善居家環境安全，打造無障礙空間，讓長者安心在家老化。</p>
+        <div class="fund-examples">如：扶手、防滑、門檻改善、坡道、浴廁安全改善</div>
+      </div>
+    </div>
+    <div class="subsidy-note mt-16">
+      <p>補助對象僅限<strong>低收入戶、中低收入戶</strong>（需經政府核定），依個案實際自付額核定，不重複補助政府已補助部分。</p>
+      <table class="subsidy-table mt-16">
+        <thead>
+          <tr>
+            <th>身分別</th>
+            <th>輔具類上限</th>
+            <th>環改類上限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>低收入戶</td>
+            <td class="amt">最高 5,000 元</td>
+            <td class="amt">最高 10,000 元</td>
+          </tr>
+          <tr>
+            <td>中低收入戶</td>
+            <td class="amt">最高 3,000 元</td>
+            <td class="amt">最高 8,000 元</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="fee">
+  <div class="container fade-up">
+    <div class="label label-orange">資金透明</div>
+    <h2>每一分錢，<br>都有明確的去向</h2>
+    <p class="section-sub">我們主動公開費用結構，因為信任是合作的基礎。</p>
+    <div class="fee-intro">
+      <div class="fee-bar">
+        <div class="fee-bar-fill fee-85">85% 全數用於個案補助</div>
+        <div class="fee-bar-fill fee-15">15%</div>
+      </div>
+      <div class="fee-intro-text">
+        <h3>85% 直接補助精準到位</h3>
+        <p>直接用於低收入戶、中低收入戶的輔具與居家環改自付缺口。</p>
+        <p style="margin-top:10px;">15% 為執行服務費，用來支撐補助能真正落地的專業工作——這不是行政費，而是讓善意確實抵達的成本。</p>
+      </div>
+    </div>
+    <div class="fee-items">
+      <div class="fee-item">
+        <div class="fee-item-icon">🔍</div>
+        <div>
+          <h4>專業評估</h4>
+          <p>個管師實地評估個案需求，確保補助用在真正需要的地方</p>
+        </div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-icon">🔗</div>
+        <div>
+          <h4>資源媒合</h4>
+          <p>媒合藥局、輔具廠商與個案，協助取得合適資源</p>
+        </div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-icon">📋</div>
+        <div>
+          <h4>計畫管理</h4>
+          <p>個案審核、補助核定、文件把關，確保資源不流失</p>
+        </div>
+      </div>
+      <div class="fee-item">
+        <div class="fee-item-icon">📝</div>
+        <div>
+          <h4>執行紀錄</h4>
+          <p>彙整個案紀錄與故事，回饋合作夥伴執行成果</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container fade-up">
+    <div class="label label-green">執行流程</div>
+    <h2>嚴謹把關，<br>讓支持真正落地</h2>
+    <p class="section-sub">每一筆補助都經過完整的審核流程，確保資源精準補到缺口。</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <div class="process-step-body">
+          <h4>提出申請</h4>
+          <p>合作單位提出個案補助需求，提供必要文件與評估資料</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <div class="process-step-body">
+          <h4>需求評估</h4>
+          <p>由專業個管師實地評估補助需求，確認個案資格與實際自付狀況</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <div class="process-step-body">
+          <h4>補助審核</h4>
+          <p>嚴格依身分別、自付額與補助上限進行核定，不重複補助</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <div class="process-step-body">
+          <h4>輔具配置 / 居家環改</h4>
+          <p>確實完成必要資源配置 or 居家安全改善工程</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">5</div>
+        <div class="process-step-body">
+          <h4>執行紀錄彙整</h4>
+          <p>彙整合格之個案紀錄與影像故事，回饋合作夥伴</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="container fade-up">
+    <div class="label label-orange">支持的樣子</div>
+    <h2>支持之後，<br>生活真的不一樣</h2>
+    <p class="section-sub">當資源補到位，改變往往比想像的更具體。</p>
+    <p class="stories-note">＊以下為情境模擬，用以說明補助可能帶來的改變。</p>
+    <div class="story-cards mt-16">
+      <div class="story-card">
+        <div class="story-top"></div>
+        <div class="story-body">
+          <span class="story-tag">低收入戶 · 居家環改</span>
+          <span class="story-sim">情境模擬</span>
+          <p>住在老舊透天厝的阿嬤，浴室沒有扶手，每次洗澡都讓家人提心吊膽。申請環改補助時，因為還有一萬多元的自付缺口，工程遲遲無法動工。</p>
+          <p style="margin-top:10px;">本計畫協助補上差額之後，浴室扶手終於裝好了。</p>
+          <div class="story-highlight">「她說，終於可以自己進去洗澡了，不用每次都麻煩孩子。」</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-top"></div>
+        <div class="story-body">
+          <span class="story-tag">中低收入戶 · 輔具補助</span>
+          <span class="story-sim">情境模擬</span>
+          <p>獨居的伯伯因為腳力退化，走路越來越不穩，但一直負擔不起助行器的自付額，出門的機會愈來愈少。</p>
+          <p style="margin-top:10px;">取得助行器之後，他可以自己走去巷口的早餐店。</p>
+          <div class="story-highlight">「那是他三年來第一次一個人出門，他說感覺自己還是自己。」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <div class="container fade-up">
+    <div class="label" style="background:rgba(224,120,40,0.2);color:var(--orange-light);">影響力</div>
+    <h2>您的支持，<br>啟動的不只是一次補助</h2>
+    <p class="section-sub">每一筆合作資源，都在台南在地建立一個持續運作的高齡友善循環。</p>
+    <div class="cycle-grid">
+      <div class="cycle-node">
+        <span class="cycle-node-icon">🤝</span>
+        <h4>企業／社團支持</h4>
+        <p>投入公益資源，實踐ESG社會責任，成為在地高齡友善的推動者</p>
+      </div>
+      <div class="cycle-node">
+        <span class="cycle-node-icon">📌</span>
+        <h4>協會專案執行</h4>
+        <p>嚴謹審核、補助核定、資源媒合，確保每一筆資源都到位</p>
+      </div>
+      <div class="cycle-node">
+        <span class="cycle-node-icon">🏡</span>
+        <h4>長者與家庭受益</h4>
+        <p>長者更快取得輔具與環改，減輕家庭因自付額造成的壓力</p>
+      </div>
+      <div class="cycle-node">
+        <span class="cycle-node-icon">🌱</span>
+        <h4>建立在地網絡</h4>
+        <p>串起企業、協會與照顧服務體系，影響力持續在社區擴散</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="container fade-up">
+    <div class="label label-orange">合作方案</div>
+    <h2>選擇適合的方式，<br>一起打造高齡友善社會</h2>
+    <p class="section-sub">四種方案，從個人、小型社團到企業年度ESG專案，都能找到合適的切入點。</p>
+    <div class="plans-note">
+      <strong>所有方案：85% 實際補助金 ＋ 15% 執行服務費</strong>
+      方案金額含稅，透明公開。15% 執行服務費涵蓋專業評估、資源媒合、計畫管理與執行紀錄等工作，確保補助精準落地。
+    </div>
+    <div class="plan-cards">
+
+      <div class="plan-card">
+        <div class="plan-body">
+          <div class="plan-name">暖心微光方案</div>
+          <div class="plan-price">5 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合個人、小型社團，或初次想參與公益的夥伴。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">42,500 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">7,500 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-body">
+          <div class="plan-name">暖心啟動方案</div>
+          <div class="plan-price">10 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合初次合作的企業或小型團體。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">85,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">15,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-body">
+          <div class="plan-name">安心守護方案</div>
+          <div class="plan-price">30 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合企業年度公益專案，標準型合作方案。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">255,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">45,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-body">
+          <div class="plan-name">ESG 社區共好方案</div>
+          <div class="plan-price">50 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合中小企業、社團年度 ESG 或社會服務主題。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">425,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">75,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
     </div>
 
-    <section id="services">
-        <h2 class="section-title">我們的核心服務</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">🤝</span>
-                <h3>溫馨生活陪伴</h3>
-                <p>專業陪伴人員定期訪視，傾聽長者心聲，提供日常關懷與情感支持，排解孤獨感。</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🏃‍♂️</span>
-                <h3>樂齡健康促進</h3>
-                <p>設計適合長者的溫和運動與認知活化課程，延緩失智與失能，保持身心活力。</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🛡️</span>
-                <h3>居家安全防護</h3>
-                <p>提供居家環境安全評估與改善建議，降低跌倒風險，打造安心無障礙的居住空間。</p>
-            </div>
+    <div class="payment-note">
+      <strong>💡 付款方式說明</strong>
+      <p>簽約完成後，支付方案金額之 <strong>80%</strong> 作為啟動款，計畫即刻啟動執行。執行完成後，依實際補助核定金額結清尾款，<span class="nobrk">最終收取金額以不超過方案總額為限。</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container fade-up">
+    <div class="label label-orange">聯絡我們</div>
+    <div class="contact-intro">
+      讓需要的支持，<br><em>真正走進長者的家。</em>
+    </div>
+    <p style="font-size:17px; color:var(--text-muted); margin-bottom:28px; line-height:1.8;">
+      期待與您攜手，一起補上長照最後一段缺口，讓善的循環持續發生。<br>歡迎透過以下方式聯絡我們，預約洽談或了解更多合作細節。
+    </p>
+    
+    <div class="contact-items">
+      <a href="tel:06-3120098" class="contact-item pc-no-click">
+        <div class="contact-icon phone">📞</div>
+        <div class="contact-text">
+          <strong>電話 (手機直撥)</strong>
+          <span>06-3120098</span>
         </div>
-    </section>
+      </a>
 
-    <section id="about" style="background-color: #FAFBFB; max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">關於銀齡安心</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>「銀齡安心支持計畫」誕生於對高齡化社會的深切關懷。我們深信，每位長者都值得擁有尊嚴、安全且充滿笑容的晚年生活。</p>
-                    <p>我們的團隊由具備熱忱的社工、照顧服務員以及志工組成，透過系統化的支持網絡，不僅服務長者，更落實減輕子女與家庭的照顧負擔。</p>
-                    <ul class="features-list">
-                        <li>專業且通過嚴格篩選的服務團隊</li>
-                        <li>量身打造的個人化支持方案</li>
-                        <li>與社區密切結合的互助網絡</li>
-                    </ul>
-                </div>
+      <a href="mailto:info@chihying.org" class="contact-item">
+        <div class="contact-icon email">✉️</div>
+        <div class="contact-text">
+          <strong>電子信箱</strong>
+          <span>info@chihying.org</span>
+        </div>
+      </a>
+      
+      <a href="https://line.me/R/ti/p/@571fxeuw" target="_blank" class="contact-item pc-no-click">
+        <div class="contact-line-content">
+          <div style="display: flex; align-items: center; gap: 18px;">
+            <div class="contact-icon line">💬</div>
+            <div class="contact-text">
+              <strong>LINE 官方帳號</strong>
+              <span>@571fxeuw</span>
             </div>
+          </div>
+          <img src="https://qr-official.line.me/gs/M_571fxeuw_GW.png?oat_content=qr" alt="LINE QR Code" class="contact-qrcode">
         </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <h2 class="section-title">聯絡我們</h2>
-        <div class="contact-container">
-            <form onsubmit="event.preventDefault(); alert('感謝您的訊息，我們將盡快與您聯絡！');">
-                <div class="form-group">
-                    <label for="name">您的姓名</label>
-                    <input type="text" id="name" required placeholder="請輸入姓名">
-                </div>
-                <div class="form-group">
-                    <label for="email">電子信箱</label>
-                    <input type="email" id="email" required placeholder="請輸入電子信箱">
-                </div>
-                <div class="form-group">
-                    <label for="message">諮詢內容</label>
-                    <textarea id="message" rows="5" required placeholder="請輸入您想了解的服務內容..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">送出訊息</button>
-            </form>
+      </a>
+      
+      <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E7%B9%94%E8%8B%B1%E6%95%99%E8%82%B2%E8%88%87%E5%85%AC%E7%9B%8A%E5%80%94%E6%9C%83" target="_blank" class="contact-item">
+        <div class="contact-icon addr">📍</div>
+        <div class="contact-text">
+          <strong>地址 (點擊導航)</strong>
+          <span style="font-size:15px; font-weight: 500; display: block; line-height: 1.5;">台南市永康區中華里中華路12號17樓之5</span>
         </div>
-    </section>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 銀齡安心支持計畫. All Rights Reserved.</p>
-    </footer>
+<footer>
+  <p>
+    <strong>臺南市織英教育與公益協會</strong><br>
+    Tainan Chihying Education and Public Welfare Association<br>
+    © 2026 銀齡安心支持計畫
+  </p>
+</footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
