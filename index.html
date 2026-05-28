@@ -546,7 +546,7 @@
   }
   .plan-cta:hover { opacity: 0.85; }
   
-  /* 💡 付款說明區塊樣式優化 — 防止標點符號落單 */
+  /* 💡 付款說明區塊樣式優化 — 防止手機版超長不換行與框框溢出 */
   .payment-note {
     margin-top: 28px;
     background: var(--white);
@@ -559,10 +559,17 @@
   }
   .payment-note strong { color: var(--charcoal); display: block; margin-bottom: 8px; font-size: 17px; }
   .payment-note p {
-    word-break: keep-all; /* 防止亞洲中文字元在不恰當的地方斷行 */
+    word-break: break-all; /* 核心修正：確保手機版超長文字遇到框框邊界會自動換行，絕不溢出 */
+  }
+  .highlight-big-num {
+    display: block;
+    font-size: 36px;       /* 核心修正：放大 80% 的字體 */
+    font-weight: 700;      /* 加粗顯示 */
+    color: var(--charcoal);
+    margin: 8px 0;
   }
   .nobrk {
-    white-space: nowrap; /* 智慧保護：強制包裹內的字詞與標點絕對不拆散斷行 */
+    white-space: nowrap; 
   }
 
   /* CONTACT */
@@ -981,10 +988,13 @@
     <div class="label label-orange">合作方案</div>
     <h2>選擇適合的方式，<br>一起打造高齡友善社會</h2>
     <p class="section-sub">四種方案，從個人、小型社團到企業年度ESG專案，都能找到合適的切入點。</p>
+    
+    <!-- 圖1修正處：將「方案金額含稅」後方文字切到下一行 -->
     <div class="plans-note">
-      <strong>所有方案：85% 實際補助金 ＋ 15% 執行服務費</strong>
-      方案金額含稅，透明公開。15% 執行服務費涵蓋專業評估、資源媒合、計畫管理與執行紀錄等工作，確保補助精準落地。
+      <strong>所有方案：85% 實際補助金 ＋ 15% 執行服務費</strong><br>
+      <p style="margin-top: 6px; font-size: 15px;">方案金額含稅，透明公開。15% 執行服務費涵蓋專業評估、資源媒合、計畫管理與執行紀錄等工作，確保補助精準落地。</p>
     </div>
+    
     <div class="plan-cards">
 
       <div class="plan-card">
@@ -1069,9 +1079,14 @@
 
     </div>
 
+    <!-- 圖2修正與手機版換行修正處 -->
     <div class="payment-note">
       <strong>💡 付款方式說明</strong>
-      <p>簽約完成後，支付方案金額之 <strong>80%</strong> 作為啟動款，計畫即刻啟動執行。執行完成後，依實際補助核定金額結清尾款，<span class="nobrk">最終收取金額以不超過方案總額為限。</span></p>
+      <p>
+        簽約完成後，支付方案金額之 
+        <span class="highlight-big-num">80%</span> <!-- 圖2修正：獨立包起來放大字體 -->
+        作為啟動款，計畫即刻啟動執行。執行完成後，依實際補助核定金額結清尾款，<span class="nobrk">最終收取金額以不超過方案總額為限。</span>
+      </p>
     </div>
   </div>
 </section>
