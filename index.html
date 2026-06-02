@@ -596,11 +596,35 @@
   .plan-breakdown-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 12px;
     font-size: 16px;
-    padding: 6px 0;
+    padding: 8px 0;
   }
-  .plan-breakdown-row .label-text { color: var(--text-muted); }
-  .plan-breakdown-row .label-value { font-weight: 500; color: var(--charcoal); }
+  .plan-breakdown-row .label-text {
+    color: var(--text-muted);
+    line-height: 1.25;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  .plan-breakdown-row .label-text small {
+    display: block;
+    margin-top: 3px;
+    padding-left: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .plan-breakdown-row .label-value {
+    font-weight: 500;
+    color: var(--charcoal);
+    white-space: nowrap;
+    line-height: 1;
+    align-self: center;
+  }
   .plan-breakdown-row .label-value.orange { color: var(--orange); }
   .plan-breakdown-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 10px 0; }
   .plan-cta {
@@ -1117,13 +1141,13 @@
           <p class="plan-desc">適合個人、小型社團，或初次想參與公益的夥伴。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
-              <span class="label-value orange">42,500 元</span>
+              <span class="label-text">實際補助金<small>(85%)</small></span>
+              <span class="label-value orange">42,500元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
-              <span class="label-value">7,500 元</span>
+              <span class="label-text">執行服務費<small>(15%)</small></span>
+              <span class="label-value">7,500元</span>
             </div>
           </div>
           <a href="#contact" class="plan-cta">立即洽詢</a>
@@ -1137,13 +1161,13 @@
           <p class="plan-desc">適合初次合作的企業或小型團體。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
-              <span class="label-value orange">85,000 元</span>
+              <span class="label-text">實際補助金<small>(85%)</small></span>
+              <span class="label-value orange">85,000元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
-              <span class="label-value">15,000 元</span>
+              <span class="label-text">執行服務費<small>(15%)</small></span>
+              <span class="label-value">15,000元</span>
             </div>
           </div>
           <a href="#contact" class="plan-cta">立即洽詢</a>
@@ -1157,13 +1181,13 @@
           <p class="plan-desc">適合企業年度公益專案，標準型合作方案。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
-              <span class="label-value orange">255,000 元</span>
+              <span class="label-text">實際補助金<small>(85%)</small></span>
+              <span class="label-value orange">255,000元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
-              <span class="label-value">45,000 元</span>
+              <span class="label-text">執行服務費<small>(15%)</small></span>
+              <span class="label-value">45,000元</span>
             </div>
           </div>
           <a href="#contact" class="plan-cta">立即洽詢</a>
@@ -1177,13 +1201,13 @@
           <p class="plan-desc">適合中小企業、社團年度 ESG 或社會服務主題。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
-              <span class="label-value orange">425,000 元</span>
+              <span class="label-text">實際補助金<small>(85%)</small></span>
+              <span class="label-value orange">425,000元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
-              <span class="label-value">75,000 元</span>
+              <span class="label-text">執行服務費<small>(15%)</small></span>
+              <span class="label-value">75,000元</span>
             </div>
           </div>
           <a href="#contact" class="plan-cta">立即洽詢</a>
