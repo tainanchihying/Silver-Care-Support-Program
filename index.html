@@ -1,2000 +1,1011 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>臺南市織英教育與公益協會 — 官方網站</title>
-  <meta
-    name="description"
-    content="臺南市織英教育與公益協會串聯教育、公益與社會資源，陪伴個人、學校、企業與社群，把善意轉化為能真正落地的行動。"
-  />
-
-  <script>
-    (function () {
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      function resetTopOnMobile() {
-        var isMobile = window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
-        if (!isMobile || location.hash) return;
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        if (document.body) document.body.scrollTop = 0;
-      }
-
-      resetTopOnMobile();
-      window.addEventListener("DOMContentLoaded", resetTopOnMobile);
-      window.addEventListener("load", function () {
-        resetTopOnMobile();
-        setTimeout(resetTopOnMobile, 120);
-        setTimeout(resetTopOnMobile, 500);
-      });
-      window.addEventListener("pageshow", function () {
-        resetTopOnMobile();
-        setTimeout(resetTopOnMobile, 120);
-      });
-    })();
-  </script>
-
-  <style>
-    :root {
-      --chihying-blue: #2a5b8c;
-      --chihying-blue-dark: #1f4368;
-      --chihying-blue-soft: #eaf2fb;
-      --chihying-orange: #c97035;
-      --chihying-orange-dark: #a95520;
-      --chihying-orange-soft: #fff0e5;
-      --chihying-green: #3f8062;
-      --chihying-green-soft: #eaf6ef;
-      --chihying-bg: #fffaf3;
-      --chihying-bg-warm: #fff4e8;
-      --white: #ffffff;
-      --text-dark: #263238;
-      --text-soft: #6b7280;
-      --border-color: rgba(42, 91, 140, 0.15);
-      --shadow-soft: 0 18px 45px rgba(38, 50, 56, 0.08);
-      --shadow-card: 0 10px 26px rgba(38, 50, 56, 0.08);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --max-width: 1120px;
-      --sans: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      --serif: "Noto Serif TC", "PMingLiU", "Songti TC", serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      color: var(--text-dark);
-      background:
-        radial-gradient(circle at top left, rgba(255, 214, 170, 0.42), transparent 38%),
-        radial-gradient(circle at top right, rgba(42, 91, 140, 0.12), transparent 34%),
-        var(--chihying-bg);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--max-width), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 78px 0;
-    }
-
-    .slabel {
-      color: var(--chihying-orange);
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    h1,
-    h2,
-    h3 {
-      line-height: 1.35;
-      letter-spacing: 0.01em;
-    }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(27px, 3.2vw, 38px);
-      color: var(--chihying-blue-dark);
-      margin-bottom: 16px;
-    }
-
-    .ssub {
-      max-width: 760px;
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--chihying-orange), #f09a42);
-      box-shadow: 0 12px 25px rgba(201, 112, 53, 0.26);
-    }
-
-    .btn-secondary {
-      color: var(--chihying-blue-dark);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 10px 22px rgba(42, 91, 140, 0.08);
-    }
-
-    /* Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 250, 243, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(42, 91, 140, 0.1);
-    }
-
-    .site-header .container {
-      width: calc(100% - 32px);
-      max-width: none;
-    }
-
-    .nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .brand-logo {
-      width: 58px;
-      height: 48px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.35;
-    }
-
-    .brand-name strong {
-      font-size: 16px;
-      color: var(--chihying-blue-dark);
-      letter-spacing: 0.02em;
-    }
-
-    .brand-name span {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-weight: 800;
-      color: var(--chihying-blue-dark);
-      font-size: 15px;
-    }
-
-    .nav-links a {
-      padding: 8px 4px;
-      opacity: 0.88;
-    }
-
-    .nav-links a:hover {
-      color: var(--chihying-orange);
-      opacity: 1;
-    }
-
-    .nav-cta {
-      padding: 10px 18px !important;
-      color: var(--white) !important;
-      background: var(--chihying-orange);
-      border-radius: 999px;
-      box-shadow: 0 10px 20px rgba(201, 112, 53, 0.2);
-    }
-
-    /* Hero */
-    .hero {
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-      background: var(--chihying-bg);
-    }
-
-    .hero-banner {
-      position: relative;
-      min-height: 590px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background-image: url("hero-banner.png");
-      background-size: cover;
-      background-position: center right;
-      background-repeat: no-repeat;
-    }
-
-    .hero-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(255, 250, 243, 0.86) 0%, rgba(255, 250, 243, 0.52) 34%, rgba(255, 250, 243, 0.12) 63%, rgba(255, 250, 243, 0) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .hero-banner::after {
-      content: "";
-      position: absolute;
-      left: -8%;
-      right: -8%;
-      bottom: -82px;
-      height: 150px;
-      background: var(--chihying-bg);
-      border-radius: 52% 48% 0 0 / 70% 70% 0 0;
-      z-index: 2;
-      box-shadow: 0 -16px 36px rgba(255, 250, 243, 0.84);
-      pointer-events: none;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero-content {
-      max-width: 540px;
-      padding: 78px 0 118px;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--chihying-orange-dark);
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid rgba(201, 112, 53, 0.18);
-      border-radius: 999px;
-      padding: 6px 13px;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(33px, 4.8vw, 54px);
-      color: var(--chihying-blue-dark);
-      margin-bottom: 18px;
-      line-height: 1.34;
-      letter-spacing: 0.01em;
-    }
-
-    .hero h1 span {
-      color: var(--chihying-orange);
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .hero p {
-      color: #4d5a62;
-      font-size: 16px;
-      line-height: 1.9;
-      max-width: 530px;
-    }
-
-    .hero-orange-shape {
-      position: absolute;
-      left: -10%;
-      bottom: -18px;
-      width: 44%;
-      height: 96px;
-      background: rgba(201, 112, 53, 0.82);
-      clip-path: ellipse(72% 56% at 18% 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 21px;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--chihying-orange), #f09a42);
-      box-shadow: 0 12px 25px rgba(201, 112, 53, 0.24);
-    }
-
-    .btn-secondary {
-      color: var(--chihying-blue-dark);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 10px 22px rgba(42, 91, 140, 0.08);
-    }
-
-    .hero-impact {
-      position: relative;
-      z-index: 3;
-      padding: 10px 0 58px;
-      background: var(--chihying-bg);
-    }
-
-    .hero-impact-inner {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-impact-label {
-      display: inline-flex;
-      padding: 5px 14px;
-      border-radius: 999px;
-      background: rgba(42, 91, 140, 0.08);
-      color: var(--chihying-blue-dark);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-    }
-
-    .hero-impact h2 {
-      font-size: clamp(25px, 3vw, 34px);
-      margin-bottom: 13px;
-    }
-
-    .hero-impact p {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--text-soft);
-      font-size: 15.5px;
-      line-height: 1.9;
-    }
-
-    .keep-inline {
-      white-space: nowrap;
-    }
-
-    .hero-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      max-width: 560px;
-      margin: 24px auto 0;
-    }
-
-    .hero-mini-card {
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(42, 91, 140, 0.1);
-      border-radius: 18px;
-      padding: 15px 12px;
-      box-shadow: 0 10px 20px rgba(38, 50, 56, 0.05);
-    }
-
-    .hero-mini-card strong {
-      display: block;
-      color: var(--chihying-orange);
-      font-size: 21px;
-      line-height: 1.25;
-      margin-bottom: 4px;
-    }
-
-    .hero-mini-card span {
-      color: var(--text-soft);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    /* Services */
-    .services-section {
-      background: rgba(255, 255, 255, 0.48);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 42px;
-    }
-
-    .service-card {
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 30px 28px;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 34px rgba(38, 50, 56, 0.11);
-    }
-
-    .service-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 27px;
-      margin-bottom: 18px;
-    }
-
-    .service-card:nth-child(1) .service-icon {
-      background: var(--chihying-orange-soft);
-    }
-
-    .service-card:nth-child(2) .service-icon {
-      background: var(--chihying-green-soft);
-    }
-
-    .service-card:nth-child(3) .service-icon {
-      background: var(--chihying-blue-soft);
-    }
-
-    .service-card h3 {
-      color: var(--chihying-blue-dark);
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    /* Programs */
-    .program-section {
-      background:
-        radial-gradient(circle at top right, rgba(42, 91, 140, 0.1), transparent 30%),
-        #ffffff;
-    }
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 42px;
-    }
-
-    .program-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 280px;
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .program-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 38px rgba(38, 50, 56, 0.12);
-    }
-
-    .program-card:hover h3,
-    .program-card:hover p,
-    .program-card:hover .program-meta,
-    .program-card:hover .program-link {
-      color: var(--white);
-      opacity: 1;
-    }
-
-    .program-card:hover .program-tag {
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .program-card.orange:hover {
-      background: linear-gradient(135deg, var(--chihying-orange), #e89347);
-    }
-
-    .program-card.green:hover {
-      background: linear-gradient(135deg, var(--chihying-green), #62a47e);
-    }
-
-    .program-card.blue:hover {
-      background: linear-gradient(135deg, var(--chihying-blue), #4d80b1);
-    }
-
-    .program-card:hover::after {
-      background: rgba(255, 255, 255, 0.55);
-      opacity: 0.24;
-    }
-
-    .program-card::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      right: -40px;
-      top: -40px;
-      border-radius: 50%;
-      opacity: 0.18;
-      background: var(--chihying-orange);
-    }
-
-    .program-card.blue::after {
-      background: var(--chihying-blue);
-    }
-
-    .program-card.green::after {
-      background: var(--chihying-green);
-    }
-
-    .program-tag {
-      display: inline-flex;
-      align-self: flex-start;
-      padding: 5px 13px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .program-card.orange .program-tag {
-      color: var(--chihying-orange-dark);
-      background: var(--chihying-orange-soft);
-    }
-
-    .program-card.green .program-tag {
-      color: var(--chihying-green);
-      background: var(--chihying-green-soft);
-    }
-
-    .program-card.blue .program-tag {
-      color: var(--chihying-blue-dark);
-      background: var(--chihying-blue-soft);
-    }
-
-    .program-card h3 {
-      color: var(--chihying-blue-dark);
-      font-size: 24px;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .program-card p {
-      color: var(--text-soft);
-      line-height: 1.9;
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .program-meta {
-      margin-top: auto;
-      color: var(--text-dark);
-      font-size: 15px;
-      font-weight: 800;
-      opacity: 0.82;
-      position: relative;
-      z-index: 1;
-    }
-
-    .program-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 18px;
-      font-weight: 900;
-      color: var(--chihying-orange);
-      position: relative;
-      z-index: 1;
-    }
-
-    .program-card.blue .program-link {
-      color: var(--chihying-blue);
-    }
-
-    .program-card.green .program-link {
-      color: var(--chihying-green);
-    }
-
-    /* Impact */
-    .impact-section {
-      background:
-        linear-gradient(180deg, rgba(255, 250, 243, 0.94), rgba(255, 244, 232, 0.92)),
-        var(--chihying-bg-warm);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .impact-section::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: rgba(42, 91, 140, 0.08);
-      top: 80px;
-      right: -160px;
-    }
-
-    .impact-section::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: rgba(201, 112, 53, 0.1);
-      bottom: 80px;
-      left: -150px;
-    }
-
-    .impact-section .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .impact-feature-card {
-      margin-top: 42px;
-      background:
-        linear-gradient(135deg, rgba(42, 91, 140, 0.92), rgba(31, 67, 104, 0.88)),
-        var(--chihying-blue-dark);
-      color: var(--white);
-      border-radius: 32px;
-      padding: clamp(30px, 5vw, 52px);
-      box-shadow: 0 24px 60px rgba(31, 67, 104, 0.22);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .impact-feature-card::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.09);
-      top: -110px;
-      right: -60px;
-    }
-
-    .impact-feature-card::after {
-      content: "";
-      position: absolute;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: rgba(255, 179, 104, 0.18);
-      bottom: -80px;
-      left: 12%;
-    }
-
-    .impact-feature-label {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      padding: 6px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffe6cc;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
-    }
-
-    .impact-feature-card h3 {
-      position: relative;
-      z-index: 1;
-      max-width: 880px;
-      font-family: var(--serif);
-      font-size: clamp(27px, 4vw, 42px);
-      margin-bottom: 18px;
-    }
-
-    .impact-feature-card p {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 17px;
-      line-height: 2;
-    }
-
-    .impact-highlight-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .impact-highlight-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .impact-dashboard {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 16px;
-    }
-
-    .impact-metric {
-      min-height: 152px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 249, 241, 0.95));
-      border: 1px solid rgba(42, 91, 140, 0.13);
-      border-radius: 22px;
-      padding: 22px 18px;
-      box-shadow: 0 12px 24px rgba(38, 50, 56, 0.07);
-    }
-
-    .impact-metric:nth-child(even) .impact-number {
-      color: var(--chihying-orange);
-    }
-
-    .impact-number {
-      font-family: var(--serif);
-      font-size: clamp(30px, 3vw, 40px);
-      font-weight: 900;
-      color: var(--chihying-blue);
-      line-height: 1.15;
-      margin-bottom: 8px;
-      letter-spacing: -0.03em;
-    }
-
-    .impact-title {
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-    }
-
-    .impact-metric p {
-      color: var(--text-soft);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .impact-service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 34px;
-    }
-
-    .impact-service-card {
-      border-radius: 28px;
-      padding: 30px 26px;
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(42, 91, 140, 0.12);
-      position: relative;
-      overflow: hidden;
-      min-height: 440px;
-    }
-
-    .impact-service-card::before {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      right: -60px;
-      top: -60px;
-      border-radius: 50%;
-      opacity: 0.16;
-    }
-
-    .impact-service-card.service-blue {
-      background: linear-gradient(180deg, #f3f8ff, #ffffff);
-    }
-
-    .impact-service-card.service-green {
-      background: linear-gradient(180deg, #f1fbf5, #ffffff);
-    }
-
-    .impact-service-card.service-orange {
-      background: linear-gradient(180deg, #fff4e8, #ffffff);
-    }
-
-    .impact-service-card.service-blue::before {
-      background: var(--chihying-blue);
-    }
-
-    .impact-service-card.service-green::before {
-      background: var(--chihying-green);
-    }
-
-    .impact-service-card.service-orange::before {
-      background: var(--chihying-orange);
-    }
-
-    .service-tag {
-      display: inline-flex;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .service-blue .service-tag {
-      color: var(--chihying-blue-dark);
-      background: rgba(42, 91, 140, 0.12);
-    }
-
-    .service-green .service-tag {
-      color: var(--chihying-green);
-      background: rgba(63, 128, 98, 0.12);
-    }
-
-    .service-orange .service-tag {
-      color: var(--chihying-orange-dark);
-      background: rgba(201, 112, 53, 0.12);
-    }
-
-    .impact-service-card h3 {
-      color: var(--chihying-blue-dark);
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .service-match {
-      font-size: 14px;
-      font-weight: 900;
-      color: var(--text-dark);
-      opacity: 0.72;
-      margin-bottom: 18px;
-      line-height: 1.65;
-    }
-
-    .impact-service-card ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .impact-service-card li {
-      position: relative;
-      padding-left: 24px;
-      color: #53606a;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    .impact-service-card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.78em;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--chihying-orange);
-    }
-
-    .service-blue li::before {
-      background: var(--chihying-blue);
-    }
-
-    .service-green li::before {
-      background: var(--chihying-green);
-    }
-
-    .service-orange li::before {
-      background: var(--chihying-orange);
-    }
-
-    .impact-closing {
-      margin-top: 36px;
-      padding: 34px 28px;
-      border-radius: 30px;
-      text-align: center;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 240, 224, 0.92));
-      border: 1px solid rgba(201, 112, 53, 0.16);
-      box-shadow: 0 12px 26px rgba(38, 50, 56, 0.06);
-    }
-
-    .impact-closing p {
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 34px);
-      color: var(--chihying-orange);
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    .impact-closing span {
-      display: block;
-      max-width: 860px;
-      margin: 0 auto;
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 2;
-    }
-
-    /* Contact */
-    .contact-section {
-      background: #ffffff;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 32px;
-      margin-top: 42px;
-      align-items: stretch;
-    }
-
-    .contact-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 32px;
-      box-shadow: var(--shadow-card);
-      height: 100%;
-    }
-
-    .line-add-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 0 18px;
-      margin-top: 8px;
-      border-radius: 999px;
-      color: var(--white) !important;
-      background: linear-gradient(135deg, var(--chihying-blue), var(--chihying-blue-dark));
-      font-size: 14px;
-      font-weight: 900 !important;
-      box-shadow: 0 10px 22px rgba(42, 91, 140, 0.16);
-    }
-
-    .line-add-btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(42, 91, 140, 0.1);
-    }
-
-    .contact-item:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      flex: 0 0 auto;
-      display: grid;
-      place-items: center;
-      background: var(--chihying-orange-soft);
-      color: var(--chihying-orange);
-      font-size: 22px;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: var(--chihying-blue-dark);
-      font-size: 16px;
-      margin-bottom: 3px;
-    }
-
-    .contact-item span,
-    .contact-item a {
-      color: var(--text-soft);
-      font-weight: 700;
-    }
-
-    .line-card {
-      text-align: center;
-      background:
-        linear-gradient(180deg, var(--chihying-blue-soft), rgba(255, 255, 255, 0.95));
-      border: 1px solid rgba(42, 91, 140, 0.14);
-    }
-
-    .line-card h3 {
-      color: var(--chihying-blue-dark);
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .line-card p {
-      color: var(--text-soft);
-      margin-bottom: 20px;
-    }
-
-    .line-qr {
-      width: 170px;
-      margin: 0 auto 18px;
-      border-radius: 20px;
-      background: #ffffff;
-      padding: 12px;
-      box-shadow: 0 10px 22px rgba(38, 50, 56, 0.08);
-    }
-
-
-    .mobile-line-item {
-      display: none;
-    }
-
-    .desktop-line-card {
-      display: flex;
-    }
-
-    .line-card {
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .line-card .line-qr {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 900px) {
-      .desktop-line-card {
-        display: none;
-      }
-
-      .mobile-line-item {
-        display: flex;
-      }
-    }
-
-    /* Footer */
-    .site-footer {
-      background: var(--chihying-blue-dark);
-      color: rgba(255, 255, 255, 0.86);
-      padding: 36px 0;
-      text-align: center;
-    }
-
-    .site-footer strong {
-      display: block;
-      color: var(--white);
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .site-footer span {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 12px;
-      opacity: 0.82;
-    }
-
-    .site-footer small {
-      color: rgba(255, 255, 255, 0.66);
-    }
-
-    /* Animation */
-    .reveal-section {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-
-    .reveal-section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 1040px) {
-      .impact-dashboard {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .impact-service-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .nav {
-        height: auto;
-        padding: 16px 0;
-        align-items: flex-start;
-      }
-
-      .hero-banner {
-        min-height: 610px;
-        align-items: flex-start;
-        background-size: auto 100%;
-        background-position: 58% bottom;
-      }
-
-      .hero-banner::before {
-        background:
-          linear-gradient(180deg, rgba(255, 250, 243, 0.96) 0%, rgba(255, 250, 243, 0.9) 45%, rgba(255, 250, 243, 0.3) 100%);
-      }
-
-      .hero-content {
-        max-width: 640px;
-        padding: 58px 0 235px;
-      }
-
-      .hero-impact {
-        padding: 8px 0 52px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 76px;
-      }
-
-      .hero .container {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: auto;
-      }
-
-      .service-grid,
-      .program-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .program-card {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 28px, var(--max-width));
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-
-      .brand-logo {
-        width: 48px;
-        height: 40px;
-      }
-
-      .brand-name strong {
-        font-size: 14px;
-      }
-
-      .brand-name span {
-        font-size: 11px;
-      }
-
-      .hero {
-        padding: 0;
-      }
-
-      .hero-banner {
-        min-height: 590px;
-        background-size: auto 92%;
-        background-position: 60% bottom;
-      }
-
-      .hero-content {
-        padding: 46px 0 235px;
-      }
-
-      .hero h1 {
-        font-size: clamp(31px, 10vw, 41px);
-      }
-
-      .hero p {
-        font-size: 15.5px;
-        line-height: 1.9;
-      }
-
-      .hero-impact h2 {
-        font-size: clamp(24px, 7vw, 30px);
-      }
-
-      .hero-impact p {
-        font-size: 15px;
-        max-width: 92%;
-      }
-
-      .keep-inline {
-        white-space: normal;
-      }
-
-      .hero-mini-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }
-
-      .hero-mini-card {
-        padding: 13px 10px;
-      }
-
-      .hero-mini-card strong {
-        font-size: 19px;
-      }
-
-
-
-      .impact-dashboard {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .impact-feature-card,
-      .contact-card {
-        padding: 26px 22px;
-      }
-
-      .impact-service-card {
-        padding: 26px 22px;
-        min-height: auto;
-      }
-
-      .impact-closing {
-        padding: 28px 20px;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .impact-dashboard {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-banner {
-        min-height: 610px;
-        background-size: auto 86%;
-        background-position: 63% bottom;
-      }
-
-      .hero-content {
-        padding-bottom: 245px;
-      }
-
-      .hero-mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .brand-name strong {
-        font-size: 13px;
-      }
-
-      .hero-mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        padding-bottom: 230px;
-      }
-
-      .hero-banner {
-        min-height: 585px;
-      }
-    }
-
-
-    /* Clean final mobile-only fixes */
-    .mobile-line-item {
-      display: none;
-    }
-
-    .desktop-line-card {
-      display: flex;
-    }
-
-    .line-card {
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .line-card .line-qr {
-      width: 170px;
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 900px) {
-      .site-header .container {
-        width: calc(100% - 28px);
-        max-width: none;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand-logo {
-        width: 44px;
-        height: 36px;
-      }
-
-      .brand-name strong {
-        font-size: 13.5px;
-        line-height: 1.28;
-      }
-
-      .brand-name span {
-        display: block !important;
-        font-size: 9.5px;
-        line-height: 1.25;
-        max-width: 270px;
-        white-space: normal;
-      }
-
-      .desktop-line-card {
-        display: none;
-      }
-
-      .mobile-line-item {
-        display: flex;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-impact h2 {
-        font-size: clamp(24px, 6.2vw, 28px);
-        line-height: 1.42;
-        letter-spacing: 0;
-      }
-
-      .hero-impact .hero-mini-grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin-top: 20px !important;
-      }
-
-      .hero-impact .hero-mini-card {
-        display: block !important;
-        min-width: 0 !important;
-        text-align: center !important;
-        padding: 11px 5px !important;
-        border-radius: 14px !important;
-        background: rgba(255, 255, 255, 0.72) !important;
-        border: 1px solid rgba(42, 91, 140, 0.1) !important;
-        box-shadow: 0 8px 16px rgba(38, 50, 56, 0.04) !important;
-      }
-
-      .hero-impact .hero-mini-card strong {
-        display: block !important;
-        color: var(--chihying-orange) !important;
-        font-size: 17px !important;
-        line-height: 1.2 !important;
-        margin-bottom: 3px !important;
-      }
-
-      .hero-impact .hero-mini-card span {
-        display: block !important;
-        color: var(--text-soft) !important;
-        font-size: 12px !important;
-        line-height: 1.25 !important;
-        white-space: nowrap !important;
-        font-weight: 800 !important;
-      }
-
-      .impact-closing p {
-        font-size: clamp(18px, 5.1vw, 22px);
-        line-height: 1.4;
-        white-space: nowrap;
-      }
-
-      .line-add-btn {
-        width: 100%;
-        margin-top: 10px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .brand-name strong {
-        font-size: 12.5px;
-      }
-
-      .brand-name span {
-        font-size: 8.8px;
-        max-width: 240px;
-      }
-
-      .hero-impact h2 {
-        font-size: 23px;
-      }
-
-      .hero-impact .hero-mini-grid {
-        gap: 6px !important;
-      }
-
-      .hero-impact .hero-mini-card {
-        padding: 10px 3px !important;
-      }
-
-      .hero-impact .hero-mini-card strong {
-        font-size: 16px !important;
-      }
-
-      .hero-impact .hero-mini-card span {
-        font-size: 11px !important;
-      }
-
-      .impact-closing p {
-        font-size: 18px;
-      }
-    }
-
-
-    /* Controlled line breaks for specific copy only */
-    br.mobile-break,
-    br.desktop-break {
-      display: none;
-    }
-
-    @media (max-width: 640px) {
-      br.mobile-break {
-        display: block;
-      }
-
-      .mobile-nowrap {
-        white-space: nowrap;
-      }
-
-      .mobile-one-line {
-        white-space: nowrap;
-        font-size: clamp(11.5px, 3.4vw, 16px);
-      }
-    }
-
-    @media (min-width: 641px) {
-      br.desktop-break {
-        display: block;
-      }
-    }
-
-  </style>
-  <!-- Clean final: desktop locked from v9; mobile-only fixes organized at bottom. -->
-  <!-- clean copy line-break adjustments only -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>銀齡安心支持計畫 — 臺南市織英教育與公益協會</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #A85A2A;
+    --orange-light: #D08A46;
+    --orange-pale: #F1D7B9;
+    --green: #4F6544;
+    --green-light: #7E9468;
+    --green-pale: #DCE6D5;
+    --cream: #EED8BA;
+    --cream-dark: #DAB984;
+    --charcoal: #2C241C;
+    --text-muted: #705F4B;
+    --text-mid: #4E4032;
+    --white: #FFF4E3;
+    --red-pale: #EFD2C8;
+    --red: #A8462D;
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 20px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* NAV (修正：三欄配置，確保商標居左、選單居中、聯絡我們單獨靠右) */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(238,216,186,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 16px 24px;
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
+    align-items: center;
+    column-gap: 18px;
+  }
+  .nav-logo-link {
+    grid-column: 1;
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .nav-logo-link:hover { opacity: 0.85; }
+  .association-logo { width: auto; height: 46px; object-fit: contain; }
+  .nav-logo { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--charcoal); line-height: 1.3; }
+  .nav-logo span { display: block; font-size: 13px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
+
+  .nav-menu {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .nav-menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--text-mid);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    background: rgba(255,244,227,0.66);
+    border: 1px solid rgba(224,120,40,0.18);
+    transition: all 0.22s ease;
+  }
+  .nav-menu a:hover {
+    color: var(--orange);
+    background: var(--orange-pale);
+    border-color: rgba(224,120,40,0.32);
+    transform: translateY(-1px);
+  }
+  
+  /* 修正：聯絡我們移到網頁最右側獨立出來 */
+  .nav-contact-wrapper {
+    grid-column: 3;
+    justify-self: end;
+  }
+  .nav-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--white);
+    background: var(--orange);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    box-shadow: 0 4px 12px rgba(168, 90, 42, 0.2);
+    transition: all 0.22s ease;
+  }
+  .nav-contact-btn:hover {
+    background: #C86A1E;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(168, 90, 42, 0.28);
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 20px; }
+  .container { max-width: 700px; margin: 0 auto; }
+  .container-wide { max-width: 1100px; margin: 0 auto; }
+
+  /* LABELS */
+  .label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .label-orange { background: var(--orange-pale); color: var(--orange); }
+  .label-green { background: var(--green-pale); color: var(--green); }
+
+  /* HEADINGS */
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
+  h1 { font-size: clamp(34px, 8vw, 46px); font-weight: 700; color: var(--charcoal); }
+  h2 { font-size: clamp(28px, 6vw, 36px); font-weight: 600; color: var(--charcoal); }
+  h3 { font-size: 22px; font-weight: 600; color: var(--charcoal); }
+  .section-sub { font-size: 19px; color: var(--text-muted); margin-top: 14px; line-height: 1.8; }
+
+  /* HERO */
+  #hero {
+    background: var(--charcoal);
+    padding: 100px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(224,120,40,0.15);
+  }
+  #hero::after {
+    content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(90,138,106,0.12);
+  }
+  #hero .container { position: relative; z-index: 1; }
+  #hero .label { background: rgba(224,120,40,0.2); color: var(--orange-light); }
+  #hero h1 { color: var(--white); }
+  #hero h1 em { font-style: normal; color: var(--orange-light); }
+  #hero .hero-sub { font-size: 19px; color: rgba(255,255,255,0.7); margin-top: 18px; line-height: 1.8; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+  .btn-primary {
+    background: var(--orange); color: var(--white); font-family: var(--sans); font-size: 18px; font-weight: 500; padding: 14px 32px; border-radius: 25px; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
+  }
+  .btn-primary:hover { background: #C86A1E; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: rgba(255,255,255,0.85); font-family: var(--sans); font-size: 18px; font-weight: 400; padding: 14px 32px; border-radius: 25px; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s, color 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  /* PROBLEM (問題所在：原卡片式流程清單) */
+  #problem { background: var(--white); }
+  .bridge-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 36px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+  }
+  .flow-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--cream-dark);
+    background: var(--white);
+  }
+  .flow-step-item:last-child { border-bottom: none; }
+  .flow-step-item.highlight-red { background: var(--red-pale); }
+  .flow-step-item.highlight-green { background: var(--green-pale); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%; background: var(--cream-dark); color: var(--text-mid); font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .highlight-red .step-num { background: #F5C5BB; color: var(--red); }
+  .highlight-green .step-num { background: #B8D9C2; color: var(--green); }
+  .step-text strong { display: block; font-size: 18px; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+  .step-text span { font-size: 16px; color: var(--text-muted); }
+  .highlight-red .step-text strong { color: var(--red); }
+  .highlight-green .step-text strong { color: var(--green); }
+
+  /* NUMBERS */
+  #numbers { background: var(--cream); }
+  .case-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  @media(min-width: 550px) { .case-cards { grid-template-columns: 1fr 1fr; } }
+  .case-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--cream-dark); }
+  .case-card-header { background: var(--charcoal); color: var(--white); padding: 16px 20px; font-family: var(--serif); font-size: 18px; font-weight: 600; }
+  .case-card-header span { display: block; font-family: var(--sans); font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  .case-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--cream-dark); font-size: 16px; }
+  .case-row:last-child { border-bottom: none; }
+  .case-row .label-text { color: var(--text-muted); }
+  .case-row .amount { font-weight: 500; color: var(--charcoal); }
+  .case-row.deduct .amount { color: #C0422A; }
+  .case-row.support .amount { color: var(--green); }
+  .case-row.result { background: var(--green-pale); font-weight: 500; }
+  .case-row.result .label-text { color: var(--green); font-weight: 500; }
+  .case-row.result .amount { color: var(--green); font-size: 18px; }
+  .case-row.zero .amount { color: var(--green); font-size: 18px; }
+
+  /* WHAT WE FUND */
+  #fund { background: var(--white); }
+  .fund-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  @media(min-width: 550px) { .fund-cards { grid-template-columns: 1fr 1fr; } }
+  .fund-card { border-radius: var(--radius); padding: 26px 24px; border: 1px solid var(--cream-dark); }
+  .fund-card.orange { background: var(--orange-pale); border-color: #F5C89A; }
+  .fund-card.green { background: var(--green-pale); border-color: #A8CEB4; }
+  .fund-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 18px; }
+  .orange .fund-icon { background: rgba(224,120,40,0.15); }
+  .green .fund-icon { background: rgba(90,138,106,0.15); }
+  .fund-card h3 { font-size: 22px; margin-bottom: 10px; }
+  .orange h3 { color: var(--orange); }
+  .green h3 { color: var(--green); }
+  .fund-card p { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+  .fund-examples { font-size: 15px; color: var(--text-mid); background: rgba(255,244,227,0.58); border-radius: var(--radius-sm); padding: 12px 16px; line-height: 1.8; }
+  .subsidy-note { margin-top: 28px; background: var(--cream-dark); border-radius: var(--radius); padding: 20px 22px; }
+  .subsidy-note p { font-size: 16px; color: var(--text-mid); line-height: 1.7; }
+  .subsidy-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 16px; }
+  .subsidy-table th { background: var(--charcoal); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 500; font-size: 15px; }
+  .subsidy-table td { padding: 12px 16px; border-bottom: 1px solid var(--cream-dark); color: var(--text-mid); }
+  .subsidy-table tr:last-child td { border-bottom: none; }
+  .subsidy-table tr:nth-child(even) td { background: rgba(255,244,227,0.46); }
+  .subsidy-table .amt { font-weight: 500; color: var(--charcoal); }
+
+  /* 15% */
+  #fee { background: var(--cream); }
+  .fee-intro { background: var(--charcoal); color: var(--white); border-radius: var(--radius); padding: 26px; margin-top: 32px; display: flex; flex-direction: column; gap: 22px; }
+  .fee-bar { width: 100%; display: flex; flex-direction: row; border-radius: 6px; overflow: hidden; }
+  .fee-bar-fill { display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; padding: 12px 0; letter-spacing: 0.05em; }
+  .fee-85 { width: 85%; background: var(--orange); color: var(--white); }
+  .fee-15 { width: 15%; background: rgba(255,255,255,0.25); color: rgba(255,255,255,0.9); }
+  .fee-intro-text h3 { color: var(--white); font-size: 20px; margin-bottom: 10px; }
+  .fee-intro-text p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .fee-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  .fee-item { background: var(--white); border-radius: var(--radius); padding: 20px; border: 1px solid var(--cream-dark); display: flex; gap: 16px; align-items: flex-start; }
+  .fee-item-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .fee-item h4 { font-size: 16px; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+  .fee-item p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+
+  /* PROCESS (復原：精緻垂直時間軸設計樣式) */
+  #process { background: var(--white); }
+  .timeline {
+    position: relative;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  /* 時間軸中心縱線 */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 2px;
+    background: var(--cream-dark);
+    transform: translateX(-50%);
+  }
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 14px 36px;
+    box-sizing: border-box;
+  }
+  /* 左右交錯排列 */
+  .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+  .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+  
+  /* 時間軸節點小圓圈 */
+  .timeline-badge {
+    position: absolute;
+    top: 22px; left: 100%;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--orange-pale);
+    color: var(--orange);
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+    transform: translate(-50%, 0);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 3px var(--cream-pale);
+  }
+  .timeline-item:nth-child(even) .timeline-badge { left: 0; }
+  .timeline-item:nth-child(3) .timeline-badge,
+  .timeline-item:nth-child(4) .timeline-badge,
+  .timeline-item:nth-child(5) .timeline-badge {
+    background: var(--green-pale);
+    color: var(--green);
+    box-shadow: 0 0 0 3px rgba(90,138,106,0.15);
+  }
+  
+  .timeline-panel {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 20px;
+    border-radius: var(--radius);
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    max-width: 100%;
+  }
+  .timeline-panel h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: var(--charcoal); }
+  .timeline-panel p { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
+
+  /* 時間軸 RWD 支援 */
+  @media (max-width: 768px) {
+    .timeline::before { left: 24px; }
+    .timeline-item { width: 100%; padding-left: 54px; padding-right: 0; text-align: left !important; }
+    .timeline-item:nth-child(even) { left: 0; }
+    .timeline-badge { left: 24px !important; }
+    .timeline-panel { display: block; }
+  }
+
+  /* STORIES */
+  #stories { background: var(--cream); }
+  .stories-note { font-size: 14px; color: var(--text-muted); margin-top: 10px; }
+  .story-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  .story-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--cream-dark); }
+  .story-top { height: 6px; background: var(--orange); }
+  .story-card:nth-child(2) .story-top { background: var(--green); }
+  .story-body { padding: 26px; }
+  .story-tag { display: inline-block; font-size: 13px; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; font-weight: 500; }
+  .story-card:nth-child(1) .story-tag { background: var(--orange-pale); color: var(--orange); }
+  .story-card:nth-child(2) .story-tag { background: var(--green-pale); color: var(--green); }
+  .story-card .story-sim { font-size: 13px; color: var(--text-muted); float: right; margin-top: 4px; }
+  .story-body p { font-size: 17px; color: var(--text-mid); line-height: 1.8; }
+  .story-body .story-highlight { margin-top: 18px; padding: 14px 18px; border-radius: var(--radius-sm); font-size: 16px; font-style: italic; font-family: var(--serif); }
+  .story-card:nth-child(1) .story-highlight { background: var(--orange-pale); color: #8B4A10; }
+  .story-card:nth-child(2) .story-highlight { background: var(--green-pale); color: #2D5E3A; }
+
+  /* CYCLE */
+  #cycle { background: var(--charcoal); padding: 80px 20px; }
+  #cycle h2 { color: var(--white); }
+  #cycle .section-sub { color: rgba(255,255,255,0.6); }
+  .cycle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .cycle-node { border-radius: var(--radius); padding: 22px 20px; border: 1px solid rgba(255,255,255,0.1); }
+  .cycle-node:nth-child(1) { background: rgba(224,120,40,0.15); border-color: rgba(224,120,40,0.3); }
+  .cycle-node:nth-child(2) { background: rgba(90,138,106,0.15); border-color: rgba(90,138,106,0.3); }
+  .cycle-node:nth-child(3) { background: rgba(90,138,106,0.15); border-color: rgba(90,138,106,0.3); }
+  .cycle-node:nth-child(4) { background: rgba(224,120,40,0.15); border-color: rgba(224,120,40,0.3); }
+  .cycle-node-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+  .cycle-node h4 { font-size: 17px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
+  .cycle-node p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .cycle-arrow { text-align: center; color: rgba(255,255,255,0.3); font-size: 24px; margin: 8px 0; grid-column: span 2; display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .cycle-arrow::before, .cycle-arrow::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+  /* PLANS */
+  #plans { background: var(--cream); }
+  .plans-note { margin-top: 12px; background: var(--white); border-radius: var(--radius-sm); padding: 16px 20px; border: 1px solid var(--cream-dark); font-size: 16px; color: var(--text-muted); line-height: 1.7; }
+  .plans-note strong { color: var(--charcoal); }
+  .plan-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 28px; }
+  .plan-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--cream-dark); overflow: hidden; transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease; display: flex; flex-direction: column; }
+  .plan-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(44,42,38,0.12); }
+  .plan-body { padding: 24px 20px; display: flex; flex-direction: column; height: 100%; }
+  .plan-name { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--charcoal); }
+  .plan-price { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--orange); margin: 8px 0 4px; }
+  .plan-price span { font-size: 14px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
+  .plan-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; min-height: 45px; }
+  .plan-breakdown { background: var(--cream); border-radius: var(--radius-sm); padding: 14px 14px; margin-bottom: 20px; margin-top: auto; }
+  .plan-breakdown-row { display: flex; justify-content: space-between; font-size: 14px; padding: 4px 0; }
+  .plan-breakdown-row .label-text { color: var(--text-muted); }
+  .plan-breakdown-row .label-value { font-weight: 500; color: var(--charcoal); }
+  .plan-breakdown-row .label-value.orange { color: var(--orange); }
+  .plan-breakdown-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 8px 0; }
+  .plan-cta { display: block; text-align: center; background: var(--charcoal); color: var(--white); font-size: 15px; font-weight: 500; padding: 12px; border-radius: var(--radius-sm); text-decoration: none; transition: opacity 0.2s; }
+  .plan-cta:hover { opacity: 0.85; }
+
+  @media(max-width: 992px) {
+    .plan-cards { display: flex; overflow-x: auto; padding: 10px 4px 20px 4px; margin-left: -4px; margin-right: -4px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .plan-cards::-webkit-scrollbar { display: none; }
+    .plan-card { flex: 0 0 280px; scroll-snap-align: start; }
+  }
+  
+  .payment-note { margin-top: 28px; background: var(--white); border-radius: var(--radius); padding: 20px 22px; border: 1px solid var(--cream-dark); font-size: 16px; color: var(--text-muted); line-height: 1.8; }
+  .payment-note strong { color: var(--charcoal); display: block; margin-bottom: 8px; font-size: 17px; }
+  .payment-note p { word-break: break-all; }
+  .highlight-big-num { display: block; font-size: 36px; font-weight: 700; color: var(--charcoal); margin: 8px 0; }
+  .nobrk { white-space: nowrap; }
+
+  /* CONTACT */
+  #contact { background: var(--white); }
+  .contact-intro { font-family: var(--serif); font-size: clamp(22px, 5vw, 26px); color: var(--charcoal); line-height: 1.5; margin: 20px 0 36px; }
+  .contact-intro em { font-style: normal; color: var(--orange); }
+  .contact-items { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .contact-item { display: flex; align-items: center; gap: 18px; background: var(--cream); border-radius: var(--radius); padding: 18px 20px; text-decoration: none; color: var(--charcoal); border: 1px solid var(--cream-dark); transition: border-color 0.2s, background 0.2s; min-height: 96px; }
+  .contact-item:hover { border-color: var(--orange); background: var(--orange-pale); }
+  .contact-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .contact-icon.phone { background: var(--orange-pale); }
+  .contact-icon.email { background: var(--cream-dark); }
+  .contact-icon.line { background: #D9F5D9; }
+  .contact-icon.addr { background: var(--green-pale); }
+  .contact-text { flex: 1; }
+  .contact-text strong { display: block; font-size: 14px; color: var(--text-muted); font-weight: 400; margin-bottom: 2px; }
+  .contact-text span { font-size: 16px; font-weight: 500; color: var(--charcoal); }
+  .contact-line-content { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+  .contact-qrcode { width: 68px; height: 68px; object-fit: contain; border: 1px solid var(--cream-dark); background: var(--white); padding: 2px; border-radius: 6px; }
+
+  @media(min-width: 500px) {
+    .contact-items { grid-template-columns: 1fr 1fr; }
+    .contact-item.pc-no-click { cursor: not-allowed; pointer-events: none; }
+    .contact-item.pc-no-click:hover { border-color: var(--cream-dark); background: var(--cream); }
+  }
+  @media(max-width: 499px) { .contact-item.pc-no-click { cursor: pointer; pointer-events: auto; } }
+
+  /* 導覽列 RWD 響應式配置 */
+  @media(max-width: 1120px) {
+    nav { display: flex; flex-wrap: wrap; padding: 14px 18px 12px; row-gap: 10px; justify-content: space-between; }
+    .nav-menu { order: 3; flex: 0 0 100%; width: 100%; margin: 0; justify-content: flex-start; overflow-x: auto; padding: 2px 0 4px; scrollbar-width: none; }
+    .nav-menu::-webkit-scrollbar { display: none; }
+    .nav-menu a { font-size: 13px; padding: 7px 12px; background: rgba(255,244,227,0.72); }
+    .nav-contact-wrapper { order: 2; }
+  }
+  @media(max-width: 520px) {
+    .association-logo { height: 38px; }
+    .nav-logo { font-size: 16px; }
+    .nav-logo span { font-size: 12px; }
+    .nav-contact-btn { font-size: 13px; padding: 6px 14px; min-height: 32px; }
+    .nav-menu { gap: 6px; }
+  }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); padding: 40px 20px; text-align: center; }
+  footer p { font-size: 15px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+  footer strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+
+
+  /* ==========================================
+     💡 絲滑進場與卡片交錯動畫擴充樣式 
+     ========================================== */
+  
+  /* 區塊整體絲滑淡入（精準貝氏曲線） */
+  .fade-up { 
+    opacity: 0; 
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* 內部卡片準備狀態 */
+  .ani-item-up, .ani-item-left, .ani-item-right {
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  .ani-item-up { transform: translateY(30px); }
+  .ani-item-left { transform: translateX(-30px); }
+  .ani-item-right { transform: translateX(30px); }
+
+  /* 父級觸發後，子元素進場 */
+  .visible .ani-item-up, 
+  .visible .ani-item-left, 
+  .visible .ani-item-right { opacity: 1; transform: translate(0, 0); }
+
+  /* 💡 修正細節：問題所在卡片改為由左至右滑出樣式 */
+  .ani-item-ltr {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.75s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.75s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  .visible .ani-item-ltr { opacity: 1; transform: translateX(0); }
+
+  /* 交錯時間差 (Stagger Effect) */
+  .delay-1 { transition-delay: 0.15s; }
+  .delay-2 { transition-delay: 0.28s; }
+  .delay-3 { transition-delay: 0.40s; }
+  .delay-4 { transition-delay: 0.52s; }
+  .delay-5 { transition-delay: 0.65s; }
+
+  /* UTIL */
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+</style>
 </head>
+<body id="top">
 
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="回到首頁">
-        <img class="brand-logo" src="logo.png" alt="織英協會 Logo" />
-        <span class="brand-name">
-          <strong>臺南市織英教育與公益協會</strong>
-          <span>Tainan Chihying Education and Public Welfare Association</span>
-        </span>
+<nav>
+  <a href="#top" class="nav-logo-link">
+    <img src="logo.png" alt="協會Logo" class="association-logo">
+    <div class="nav-logo">
+      銀齡安心支持計畫
+      <span>臺南市織英教育與公益協會</span>
+    </div>
+  </a>
+  <div class="nav-menu" aria-label="頁面快速導覽">
+    <a href="#problem">補助缺口</a>
+    <a href="#fund">支持內容</a>
+    <a href="#process">補助規則</a>
+    <a href="#stories">看見改變</a>
+    <a href="#plans">合作方案</a>
+  </div>
+  <div class="nav-contact-wrapper">
+    <a href="#contact" class="nav-contact-btn">聯絡我們</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="label">銀齡安心支持計畫</div>
+    <h1>把<em>安全</em>，補進<br>長者每天生活的地方</h1>
+    <p class="hero-sub">
+      政府補助之後，仍有一段自付缺口，讓許多低收入戶、中低收入戶長者無法及時取得必要的輔具與居家環境改善。<br>
+      您的支持，正是補上那段缺口的力量。
+    </p>
+    <div class="hero-ctas">
+      <a href="#plans" class="btn-primary">了解合作方式</a>
+      <a href="#contact" class="btn-outline">立即聯絡我們</a>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="container fade-up">
+    <div class="label label-orange">問題所在</div>
+    <h2>有時候，差的只是<br>及時的一點支持</h2>
+    <p class="section-sub">補助制度雖然存在，但政府補助核定後，家庭仍須自行負擔一段差額。這段差額，往往是長者取得必要資源的最後障礙。</p>
+    <div class="bridge-flow mt-24">
+      <div class="flow-step-item ani-item-ltr delay-1">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>個管師評估需求</strong>
+          <span>由專業個管師實地評估長者所需輔具或環改項目</span>
+        </div>
+      </div>
+      <div class="flow-step-item ani-item-ltr delay-2">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>政府補助核定</strong>
+          <span>依長照制度申請補助，等待核定通過</span>
+        </div>
+      </div>
+      <div class="flow-step-item highlight-red ani-item-ltr delay-3">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>家庭仍須自付差額</strong>
+          <span>補助後仍有一段自付缺口，許多家庭因此延遲或放棄必要資源</span>
+        </div>
+      </div>
+      <div class="flow-step-item highlight-green ani-item-ltr delay-4">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>本計畫補足缺口</strong>
+          <span>協助補上自付額，讓長者即時取得所需資源</span>
+        </div>
+      </div>
+      <div class="flow-step-item ani-item-ltr delay-5">
+        <div class="step-num">5</div>
+        <div class="step-text">
+          <strong>完成輔具配置或居家環改</strong>
+          <span>長者安全、安心家中老化</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="container fade-up">
+    <div class="label label-orange">真實缺口</div>
+    <h2>數字背後，是每一個<br>被卡住的家庭</h2>
+    <p class="section-sub">政府補助後，缺口依然真實存在。以下是兩個典型案例的費用對比。</p>
+    <div class="case-cards">
+      <div class="case-card ani-item-left delay-1">
+        <div class="case-card-header">
+          低收入戶
+          <span>環改案例 · 扶手／面盆／拉門</span>
+        </div>
+        <div class="case-row"><span class="label-text">總費用</span><span class="amount">30,000 元</span></div>
+        <div class="case-row deduct"><span class="label-text">政府補助</span><span class="amount">－11,200 元</span></div>
+        <div class="case-row"><span class="label-text">家庭自付缺口</span><span class="amount" style="color:#C0422A;font-weight:600;">18,800 元</span></div>
+        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－10,000 元</span></div>
+        <div class="case-row result"><span class="label-text">最後負擔</span><span class="amount">8,800 元</span></div>
+      </div>
+      <div class="case-card ani-item-right delay-2">
+        <div class="case-card-header">
+          中低收入戶
+          <span>環改案例 · 扶手／浴室防滑</span>
+        </div>
+        <div class="case-row"><span class="label-text">總費用</span><span class="amount">5,800 元</span></div>
+        <div class="case-row deduct"><span class="label-text">政府補助</span><span class="amount">－2,730 元</span></div>
+        <div class="case-row"><span class="label-text">家庭自付缺口</span><span class="amount" style="color:#C0422A;font-weight:600;">3,070 元</span></div>
+        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－3,070 元</span></div>
+        <div class="case-row result zero"><span class="label-text">最後負擔</span><span class="amount">0 元 ✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fund">
+  <div class="container fade-up">
+    <div class="label label-green">補助內容</div>
+    <h2>您的支持，<br>具體用在哪裡？</h2>
+    <p class="section-sub">計畫補助兩大類型，讓長者在熟悉的家中更安全、更有尊嚴地生活。</p>
+    <div class="fund-cards">
+      <div class="fund-card orange ani-item-left delay-1">
+        <div class="fund-icon">♿</div>
+        <h3>輔具補助</h3>
+        <p>協助長者日常生活與行動安全，減少跌倒風險，維持日常活動能力。</p>
+        <div class="fund-examples">如：輪椅、助行器、便盆椅、移位輔具</div>
+      </div>
+      <div class="fund-card green ani-item-right delay-2">
+        <div class="fund-icon">🏠</div>
+        <h3>居家環改</h3>
+        <p>改善居家環境安全，打造無障礙空間，讓長者安心在家老化。</p>
+        <div class="fund-examples">如：扶手、防滑、門檻改善、坡道、浴廁安全改善</div>
+      </div>
+    </div>
+    <div class="subsidy-note mt-16 ani-item-up delay-3">
+      <p>補助對象僅限<strong>低收入戶、中低收入戶</strong>（需經政府核定），依個案實際自付額核定，不重複補助政府已補助部分。</p>
+      <table class="subsidy-table mt-16">
+        <thead>
+          <tr>
+            <th>身分別</th>
+            <th>輔具類上限</th>
+            <th>環改類上限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>低收入戶</td>
+            <td class="amt">最高 5,000 元</td>
+            <td class="amt">最高 10,000 元</td>
+          </tr>
+          <tr>
+            <td>中低收入戶</td>
+            <td class="amt">最高 3,000 元</td>
+            <td class="amt">最高 8,000 元</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="fee">
+  <div class="container fade-up">
+    <div class="label label-orange">資金透明</div>
+    <h2>每一分錢，<br>都有明確的去向</h2>
+    <p class="section-sub">我們主動公開費用結構，因為信任是合作的基礎。</p>
+    <div class="fee-intro">
+      <div class="fee-bar">
+        <div class="fee-bar-fill fee-85">85% 全數用於個案補助</div>
+        <div class="fee-bar-fill fee-15">15%</div>
+      </div>
+      <div class="fee-intro-text">
+        <h3>85% 直接補助精準到位</h3>
+        <p>直接用於低收入戶、中低收入戶的輔具與居家環改自付缺口。</p>
+        <p style="margin-top:10px;">15% 為執行服務費，用來支撐補助能真正落地的專業工作——這不是行政費，而是讓善意真正抵達的成本。</p>
+      </div>
+    </div>
+    <div class="fee-items">
+      <div class="fee-item ani-item-up delay-1">
+        <div class="fee-item-icon">🔍</div>
+        <div>
+          <h4>專業評估</h4>
+          <p>個管師實地評估個案需求，確保補助用在真正需要的地方</p>
+        </div>
+      </div>
+      <div class="fee-item ani-item-up delay-2">
+        <div class="fee-item-icon">🔗</div>
+        <div>
+          <h4>資源媒合</h4>
+          <p>媒合藥局、輔具廠商與個案，協助取得合適資源</p>
+        </div>
+      </div>
+      <div class="fee-item ani-item-up delay-3">
+        <div class="fee-item-icon">📋</div>
+        <div>
+          <h4>計畫管理</h4>
+          <p>個案審核、補助核定、文件把關，確保資源不流失</p>
+        </div>
+      </div>
+      <div class="fee-item ani-item-up delay-4">
+        <div class="fee-item-icon">📝</div>
+        <div>
+          <h4>執行紀錄</h4>
+          <p>彙整個案紀錄與故事，回饋合作夥伴執行成果</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container-wide fade-up">
+    <div class="label label-green" style="display:table; margin:0 auto 18px auto;">執行流程</div>
+    <h2 style="text-align:center;">嚴謹把關，<br>讓支持真正落地</h2>
+    <p class="section-sub" style="text-align:center;">每一筆補助都經過完整的審核流程，確保資源精準補到缺口。</p>
+    
+    <ul class="timeline">
+      <li class="timeline-item ani-item-left delay-1">
+        <div class="timeline-badge">1</div>
+        <div class="timeline-panel">
+          <h4>提出申請</h4>
+          <p>合作單位提出個案補助需求，提供必要文件與評估資料</p>
+        </div>
+      </li>
+      <li class="timeline-item ani-item-right delay-2">
+        <div class="timeline-badge">2</div>
+        <div class="timeline-panel">
+          <h4>需求評估</h4>
+          <p>由專業個管師實地評估補助需求，確認個案資格與實際自付狀況</p>
+        </div>
+      </li>
+      <li class="timeline-item ani-item-left delay-3">
+        <div class="timeline-badge">3</div>
+        <div class="timeline-panel">
+          <h4>補助審核</h4>
+          <p>嚴格依身分別、自付額與補助上限進行核定，不重複補助</p>
+        </div>
+      </li>
+      <li class="timeline-item ani-item-right delay-4">
+        <div class="timeline-badge">4</div>
+        <div class="timeline-panel">
+          <h4>輔具配置 / 居家環改</h4>
+          <p>確實完成必要資源配置 or 居家安全改善工程</p>
+        </div>
+      </li>
+      <li class="timeline-item ani-item-left delay-5">
+        <div class="timeline-badge">5</div>
+        <div class="timeline-panel">
+          <h4>執行紀錄彙整</h4>
+          <p>彙整合格之個案紀錄與影像故事，回饋合作夥伴</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="container fade-up">
+    <div class="label label-orange">支持的樣子</div>
+    <h2>支持之後，<br>生活真的不一樣</h2>
+    <p class="section-sub">當資源補到位，改變往往比想像的更具體。</p>
+    <p class="stories-note">＊以下為情境模擬，用以說明補助可能帶來的改變。</p>
+    <div class="story-cards mt-16">
+      <div class="story-card ani-item-left delay-1">
+        <div class="story-top"></div>
+        <div class="story-body">
+          <span class="story-tag">低收入戶 · 居家環改</span>
+          <span class="story-sim">情境模擬</span>
+          <p>住在老舊透天厝的阿嬤，浴室沒有扶手，每次洗澡都讓家人提心吊膽。申請環改補助時，因為還有一萬多元的自付缺口，工程遲遲無法動工。</p>
+          <p style="margin-top:10px;">本計畫協助補上差額之後，浴室扶手終於裝好了。</p>
+          <div class="story-highlight">「她說，終於可以自己進去洗澡了，不用每次都麻煩孩子。」</div>
+        </div>
+      </div>
+      <div class="story-card ani-item-right delay-2">
+        <div class="story-top"></div>
+        <div class="story-body">
+          <span class="story-tag">中低收入戶 · 輔具補助</span>
+          <span class="story-sim">情境模擬</span>
+          <p>獨居的伯伯因為腳力退化，走路越來越不穩，但一直負擔不起助行器的自付額，出門的機會愈來愈少。</p>
+          <p style="margin-top:10px;">取得助行器之後，他可以自己走去巷口的早餐店。</p>
+          <div class="story-highlight">「那是他三年來第一次一個人出門，他說感覺自己還是自己。」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <div class="container fade-up">
+    <div class="label" style="background:rgba(224,120,40,0.2);color:var(--orange-light);">影響力</div>
+    <h2>您的支持，<br>啟動的不只是一次補助</h2>
+    <p class="section-sub">每一筆合作資源，都在台南在地建立一個持續運作的高齡友善循環。</p>
+    <div class="cycle-grid">
+      <div class="cycle-node ani-item-up delay-1">
+        <span class="cycle-node-icon">🤝</span>
+        <h4>企業／社團支持</h4>
+        <p>投入公益資源，實踐ESG社會責任，成為在地高齡友善的推動者</p>
+      </div>
+      <div class="cycle-node ani-item-up delay-2">
+        <span class="cycle-node-icon">📌</span>
+        <h4>協會專案執行</h4>
+        <p>嚴謹審核、補助核定、資源媒合，確保每一筆資源都到位</p>
+      </div>
+      <div class="cycle-node ani-item-up delay-3">
+        <span class="cycle-node-icon">🏡</span>
+        <h4>長者與家庭受益</h4>
+        <p>長者更快取得輔具與環改，減輕家庭因自付額造成的壓力</p>
+      </div>
+      <div class="cycle-node ani-item-up delay-4">
+        <span class="cycle-node-icon">🌱</span>
+        <h4>建立在地網絡</h4>
+        <p>串起企業、協會與照顧服務體系，影響力持續在社區擴散</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="container-wide fade-up">
+    <div class="label label-orange">合作方案</div>
+    <h2>選擇適合的方式，<br>一起打造高齡友善社會</h2>
+    <p class="section-sub">四種方案，從個人、小型社團到企業年度ESG專案，都能找到合適的切入點。</p>
+    
+    <div class="plans-note ani-item-up delay-1">
+      <strong>所有方案：85% 實際補助金 ＋ 15% 執行服務費</strong><br>
+      <p style="margin-top: 6px; font-size: 15px;">方案金額含稅，透明公開。15% 執行服務費涵蓋專業評估、資源媒合、計畫管理與執行紀錄等工作，確保補助精準落地。</p>
+    </div>
+    
+    <div class="plan-cards">
+      <div class="plan-card ani-item-up delay-1">
+        <div class="plan-body">
+          <div class="plan-name">暖心微光方案</div>
+          <div class="plan-price">5 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合個人、小型社團，或初次想參與公益的夥伴。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">42,500 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">7,500 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card ani-item-up delay-2">
+        <div class="plan-body">
+          <div class="plan-name">暖心啟動方案</div>
+          <div class="plan-price">10 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合初次合作的企業或小型團體。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">85,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">15,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card ani-item-up delay-3">
+        <div class="plan-body">
+          <div class="plan-name">安心守護方案</div>
+          <div class="plan-price">30 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合企業年度公益專案，標準型合作方案。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">255,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">45,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+
+      <div class="plan-card ani-item-up delay-4">
+        <div class="plan-body">
+          <div class="plan-name">ESG 社區共好方案</div>
+          <div class="plan-price">50 萬元<span>（含稅）</span></div>
+          <p class="plan-desc">適合中小企業、社團年度 ESG 或社會服務主題。</p>
+          <div class="plan-breakdown">
+            <div class="plan-breakdown-row">
+              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-value orange">425,000 元</span>
+            </div>
+            <hr class="plan-breakdown-divider">
+            <div class="plan-breakdown-row">
+              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-value">75,000 元</span>
+            </div>
+          </div>
+          <a href="#contact" class="plan-cta">立即洽詢</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-note ani-item-up delay-5">
+      <strong>💡 付款方式說明</strong>
+      <p>
+        簽約完成後，支付方案金額之 <span class="highlight-big-num">80%</span> 作為啟動款，計畫即刻啟動執行。執行完成後，依實際補助核定金額結清尾款，<span class="nobrk">最終收取金額以不超過方案總額為限。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container fade-up">
+    <div class="label label-orange">聯絡我們</div>
+    <div class="contact-intro">
+      讓需要的支持，<br><em>真正走進長者的家。</em>
+    </div>
+    <p style="font-size:17px; color:var(--text-muted); margin-bottom:28px; line-height:1.8;">
+      期待與您攜手，一起補上長照最後一段缺口，讓善的循環持續發生。<br>歡迎透過以下方式聯絡我們，預約洽談或了解更多合作細節。
+    </p>
+    
+    <div class="contact-items">
+      <a href="tel:06-3120098" class="contact-item pc-no-click ani-item-up delay-1">
+        <div class="contact-icon phone">📞</div>
+        <div class="contact-text">
+          <strong>電話 (手機直撥)</strong>
+          <span>06-3120098</span>
+        </div>
       </a>
 
-      <nav class="nav-links" aria-label="主選單">
-        <a href="#services">三大服務</a>
-        <a href="#programs">合作方案</a>
-        <a href="#impact">社會影響力</a>
-        <a class="nav-cta" href="#contact">立即合作</a>
-      </nav>
+      <a href="mailto:info@chihying.org" class="contact-item ani-item-up delay-2">
+        <div class="contact-icon email">✉️</div>
+        <div class="contact-text">
+          <strong>電子信箱</strong>
+          <span>info@chihying.org</span>
+        </div>
+      </a>
+      
+      <a href="https://line.me/R/ti/p/@571fxeuw" target="_blank" class="contact-item pc-no-click ani-item-up delay-3">
+        <div class="contact-line-content">
+          <div style="display: flex; align-items: center; gap: 18px;">
+            <div class="contact-icon line">💬</div>
+            <div class="contact-text">
+              <strong>LINE 官方帳號</strong>
+              <span>@571fxeuw</span>
+            </div>
+          </div>
+          <img src="line-qrcode.png" alt="LINE QR Code" class="contact-qrcode">
+        </div>
+      </a>
+      
+      <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E7%B9%94%E8%8B%B1%E6%95%99%E8%82%B2%E8%88%87%E5%85%AC%E7%9B%8A%E5%80%94%E6%9C%83" target="_blank" class="contact-item ani-item-up delay-4">
+        <div class="contact-icon addr">📍</div>
+        <div class="contact-text">
+          <strong>地址 (點擊導航)</strong>
+          <span style="font-size:15px; font-weight: 500; display: block; line-height: 1.5;">台南市永康區中華里中華路12號17樓之5</span>
+        </div>
+      </a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="top">
-    <section class="hero reveal-section">
-      <div class="hero-banner">
-        <div class="container">
-          <div class="hero-content">
-            <div class="hero-kicker">臺南在地 · 公益行動</div>
-            <h1>織結資源，<br />推動 <span>共好的行動</span></h1>
-            <p>
-              我們串聯教育、公益與社會資源，<br class="mobile-break" />陪伴個人、學校、企業與社群，
-              <br class="mobile-break" />一起推動能回應社會需求的教育與公益行動。
-            </p>
+<footer>
+  <p>
+    <strong>臺南市織英教育與公益協會</strong><br>
+    Tainan Chihying Education and Public Welfare Association<br>
+    © 2026 銀齡安心支持計畫
+  </p>
+</footer>
 
-            <div class="btn-row">
-              <a class="btn btn-primary" href="#services">了解服務項目</a>
-              <a class="btn btn-secondary" href="#contact">聯繫我們</a>
-            </div>
-          </div>
-        </div>
-        <div class="hero-orange-shape" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero-impact">
-        <div class="container">
-          <div class="hero-impact-inner">
-            <div class="hero-impact-label">CHIHYING IMPACT</div>
-            <h2>讓善意相連，讓行動走得更遠。</h2>
-            <p>
-              從公益專案執行、人才培力到跨域資源整合，<br class="mobile-break" />
-              協助每一份善意被整理成可執行、可追蹤、<br class="mobile-break" /><span class="mobile-nowrap">可擴散的行動。</span>
-            </p>
-
-            <div class="hero-mini-grid">
-              <div class="hero-mini-card">
-                <strong>教育</strong>
-                <span>人才培力</span>
-              </div>
-              <div class="hero-mini-card">
-                <strong>公益</strong>
-                <span>行動支持</span>
-              </div>
-              <div class="hero-mini-card">
-                <strong>ESG</strong>
-                <span>資源整合</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section services-section reveal-section">
-      <div class="container">
-        <div class="slabel">Services</div>
-        <h2>我們的三大服務</h2>
-        <p class="ssub mobile-one-line">從在地深耕到資源對接，提供全面且細緻的協作服務。</p>
-
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon">❤️</div>
-            <h3>公益行動支持</h3>
-            <p>
-              精準連結公益需求與外部支持資源，協助社區弱勢群體，
-              讓每一份善意都能穩健落地、發揮最大價值。
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">👥</div>
-            <h3>人才培力發展</h3>
-            <p>
-              提供客製化課程與實作陪伴工作坊，深入走進校園與基層社區，
-              全方位培育具備解決問題能力的青年人才。
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🤝</div>
-            <h3>跨域資源整合</h3>
-            <p>
-              專為企業提供永續 ESG 藍圖對接，包含教育訓練、在地指標收集
-              到成果報告書撰寫的全程專業協作。
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs" class="section program-section reveal-section">
-      <div class="container">
-        <div class="slabel">Programs</div>
-        <h2>合作方案</h2>
-        <p class="ssub">選擇適合的切入點，讓一筆預算同時創造企業、社團與社會的雙向價值。</p>
-
-        <div class="program-grid">
-          <a class="program-card orange" href="https://tainanchihying.github.io/Silver-Care-Support-Program/" target="_blank" rel="noopener">
-            <span class="program-tag">公益行動支持</span>
-            <h3>銀齡安心支持計畫</h3>
-            <p>
-              主動補足長照資源的自付額缺口，<br class="mobile-break" />協助中低收入戶長輩即時取得輔具<br class="mobile-break" />與居家安全環境改善。
-            </p>
-            <div class="program-meta">4 種合作方案 · 5萬 – 50萬</div>
-            <span class="program-link">了解詳情 ➔</span>
-          </a>
-
-          <a class="program-card green" href="https://tainanchihying.github.io/Talent-Future-Impact-Program/" target="_blank" rel="noopener">
-            <span class="program-tag">人才培力發展</span>
-            <h3>企業留才 × 未來人才共好培力</h3>
-            <p>
-              結合企業內部員工心理韌性訓練，同時支持校園新世代人才發展，直接對應 SDGs 永續揭露指標。
-            </p>
-            <div class="program-meta">2 種合作方案 · 9.8萬 – 18.8萬</div>
-            <span class="program-link">了解詳情 ➔</span>
-          </a>
-
-          <a class="program-card blue" href="https://tainanchihying.github.io/ESG-Report/" target="_blank" rel="noopener">
-            <span class="program-tag">跨域資源整合</span>
-            <h3>ESG 永續報告書撰寫</h3>
-            <p>
-              從永續教育訓練、社區指標資料收集到完整產出報告書，全程一站式提供專業協作，讓永續承諾清楚落地。
-            </p>
-            <div class="program-meta">客製洽談 · 依組織需求規劃</div>
-            <span class="program-link">了解詳情 ➔</span>
-          </a>
-
-          <a class="program-card blue" href="#contact">
-            <span class="program-tag">跨域資源整合</span>
-            <h3>政府計畫案申請</h3>
-            <p>
-              協助企業、學校與組織盤點需求、整理申請條件與計畫亮點，撰寫可送審、可執行的政府計畫案。
-            </p>
-            <div class="program-meta">客製洽談 · 依申請類型規劃</div>
-            <span class="program-link">聯絡洽談 ➔</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="impact" class="section impact-section reveal-section">
-      <div class="container">
-        <div class="slabel">Impact</div>
-        <h2>社會影響力成果</h2>
-        <p class="ssub">與夥伴攜手並進，將每一份善意凝聚成改變在地的真實數據。</p>
-
-        <div class="impact-feature-card">
-          <div class="impact-feature-label">榮譽實績</div>
-          <h3>連續 3 年擔任台積電慈善基金會<br class="mobile-break" />長期公益資源運籌夥伴</h3>
-          <p>
-            織英協會具備大型公益專案推動、跨區域行政網絡運籌與企業級 ESG 成果轉化經驗。
-            2023–2025 年，我們作為台積電慈善基金會的長期公益資源運籌夥伴，
-            協助企業永續願景精準落地，轉化為可追蹤、可衡量的社會影響力。
-          </p>
-
-          <div class="impact-highlight-row">
-            <span class="impact-highlight-pill">大型公益專案推動</span>
-            <span class="impact-highlight-pill">跨區域行政運籌</span>
-            <span class="impact-highlight-pill">企業 ESG 成果轉化</span>
-          </div>
-        </div>
-
-        <div class="impact-dashboard" aria-label="社會影響力成果數字">
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="8">8</span></div>
-            <div class="impact-title">縣市資源運籌</div>
-            <p>橫跨多縣市，<br class="desktop-break" />協助跨區域公益資源穩定落地。</p>
-          </article>
-
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="262">262</span></div>
-            <div class="impact-title">間學校</div>
-            <p>統籌校園端行政流程，<br class="mobile-break" />建立可追蹤的資源發放管理機制。</p>
-          </article>
-
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="10000">10,000</span>+</div>
-            <div class="impact-title">張禮物卡</div>
-            <p>完成全家禮物卡發放行政作業，讓企業善意精準抵達。</p>
-          </article>
-
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="1052">1,052</span></div>
-            <div class="impact-title">名弱勢學子</div>
-            <p>支持 31 間學校，<br class="mobile-break" />建立長期、透明的助學資源分配系統。</p>
-          </article>
-
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="100">100</span>+</div>
-            <div class="impact-title">在地友善夥伴</div>
-            <p>串聯小農、偏鄉部落與慈善機構，推動在地共榮。</p>
-          </article>
-
-          <article class="impact-metric">
-            <div class="impact-number"><span class="counter" data-num="10000">10,000</span>+</div>
-            <div class="impact-title">人次關懷</div>
-            <p>透過春節年菜送暖專案，<br class="desktop-break" />將社會溫暖送達<br class="desktop-break" />弱勢家庭與社福單位。</p>
-          </article>
-        </div>
-
-        <div class="impact-service-grid">
-          <article class="impact-service-card service-orange">
-            <div class="service-tag">公益行動支持</div>
-            <h3>回應社會需求的精準方案推動</h3>
-            <p class="service-match">對應服務：銀齡安心支持計畫／方案推動</p>
-            <ul>
-              <li>統籌春節年菜送暖專案，<br class="mobile-break" />連結 100+ 個社福單位。</li>
-              <li>精準關懷 10,000+ 人次弱勢族群，擴大公益資源觸及。</li>
-              <li>穩定支持 13 個關鍵社福單位，推動日常物資與惜食網絡對接。</li>
-            </ul>
-          </article>
-
-          <article class="impact-service-card service-green">
-            <div class="service-tag">人才培力發展</div>
-            <h3>結構化的教育與實作陪伴</h3>
-            <p class="service-match">對應服務：企業留才 × 未來人才共好計畫</p>
-            <ul>
-              <li>連結 3 所大專院校與 4 個偏鄉課輔班，導入 35 位穩定師資。</li>
-              <li>為 100+ 名學生提供長期實作陪伴<br class="mobile-break" />與學習支持。</li>
-              <li>協助偏鄉音樂深耕計畫，培育 66 位零基礎學生，並陪伴 75 人登上正式音樂舞台。</li>
-              <li>協助 30+ 場孝道親子工作坊，支持 450+ 個家庭促進親子溝通。</li>
-            </ul>
-          </article>
-
-          <article class="impact-service-card service-blue">
-            <div class="service-tag">跨域資源整合</div>
-            <h3>企業專案的高效行政幕僚</h3>
-            <p class="service-match">對應服務：ESG 永續報告書撰寫／專案協作</p>
-            <ul>
-              <li>統籌 8 個縣市、262 間學校、10,000+ 張全家禮物卡發放作業。</li>
-              <li>支持 31 間學校、1,052 名弱勢學子，建立透明資源管理機制。</li>
-              <li>連續 3 年推動愛心市集，串聯 100+ 間在地友善小農、偏鄉部落與慈善機構。</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="impact-closing">
-      <p>讓善意相連，讓行動走得更遠。</p>
-          <span>
-            無論您正在尋找企業公益專案的策略夥伴、希望透過共好計畫凝聚員工參與，
-            或需要將 ESG 成果轉化為具說服力的影響力資料，織英協會都能陪您把善意整理成可執行、可追蹤、可擴散的行動。
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section reveal-section">
-      <div class="container">
-        <div class="slabel">Contact</div>
-        <h2>與織英取得聯繫</h2>
-        <p class="ssub">有任何合作提案或希望了解服務細節，歡迎隨時與我們相聯。</p>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-item">
-              <div class="contact-icon">☎</div>
-              <div>
-                <strong>聯絡電話（手機點擊直撥）</strong>
-                <a href="tel:063120098">06-3120098</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">✉️</div>
-              <div>
-                <strong>電子信箱</strong>
-                <a href="mailto:info@chihying.org">info@chihying.org</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <strong>地址</strong>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E7%B9%94%E8%8B%B1%E6%95%99%E8%82%B2%E8%88%87%E5%85%AC%E7%9B%8A%E5%8D%94%E6%9C%83%20%E8%87%BA%E5%8D%97%E5%B8%82%E6%B0%B8%E5%BA%B7%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF12%E8%99%9F17%E6%A8%93%E4%B9%8B5"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  臺南市永康區中華路12號17樓之5
-                </a>
-              </div>
-            </div>
-
-            <div class="contact-item mobile-line-item">
-              <div class="contact-icon">💬</div>
-              <div>
-                <strong>官方 LINE 帳號</strong>
-                <a class="line-add-btn" href="https://line.me/R/ti/p/%40574anymh" target="_blank" rel="noopener">
-                  加入官方 LINE 好友
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-card line-card desktop-line-card">
-            <h3>加入官方 LINE</h3>
-            <p>掃描 QR Code，與我們討論合作方向。</p>
-            <img class="line-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeCAIAAABCSeBNAAAGdElEQVR4nO3dwY0kRRBAUQZhCMbgDBbhDMbgSXFG+iqtVJtEVM97V7TdPd3FVx5CkV/Xdf0C8F+/Tn8AYCNpAII0AEEagCANQJAGIEgDEKQBCNIABGkAgjQAQRqAIA1AkAYgSAMQpAEI0gAEaQCCNABBGoAgDUCQBiBIAxCkAQjSAARpAII0AEEagCANQPjt3Ev//sef5158xD9//3XzX+//3nP/9pwnv+DO7+q7PZNPODUAQRqAIA1AkAYgSAMQpAEI0gAEaQCCNADh4DTkvakJv3tT83/3pub/nrzyubnDc0/O5z2TTzg1AEEagCANQJAGIEgDEKQBCNIABGkAgjQAYWwa8t4bZ+l27nd840TjuQnOJ974TD7h1AAEaQCCNABBGoAgDUCQBiBIAxCkAQjSAISl05BvtHMO78mnevJvd27Z5Mc5NQBBGoAgDUCQBiBIAxCkAQjSAARpAII0AME05P/k3ObInTd0n3vlnZsUP49TAxCkAQjSAARpAII0AEEagCANQJAGIEgDEJZOQ75x4m3nvdKft99x6kbyNz6TTzg1AEEagCANQJAGIEgDEKQBCNIABGkAgjQAYWwa8rvddzw10XjvyftOfeZzvtszec+pAQjSAARpAII0AEEagCANQJAGIEgDEKQBCF/XdU1/hm9hatLu3I7GN74vP86pAQjSAARpAII0AEEagCANQJAGIEgDEKQBCAd3Q75x7+C5u6HPOTd3uHOi8dz7Tt05vvP/BacGIEgDEKQBCNIABGkAgjQAQRqAIA1AkAYgHJyGnJoOfDI9tnP+b6ed93dPvfK9qefqCacGIEgDEKQBCNIABGkAgjQAQRqAIA1AkAYgLN0N+cTOHX5PTG2s/Lztj76NH+fUAARpAII0AEEagCANQJAGIEgDEKQBCNIAhK/ruqY/w082tVnwnDduQ9xp6t7wN37PTg1AkAYgSAMQpAEI0gAEaQCCNABBGoAgDUA4uBvy3uftO3xi53bAe+f2aL5x7vCN94bfc2oAgjQAQRqAIA1AkAYgSAMQpAEI0gAEaQDC2E3ZU3Zu6ds54Tf1C+58cs7Z+fc6NQBBGoAgDUCQBiBIAxCkAQjSAARpAII0AOHgTdk7Z7zOmdoOOGXnPsvPu1XcbkhgEWkAgjQAQRqAIA1AkAYgSAMQpAEI0gCEg9OQT+ycS3ti6mbwe2+8sfrcN7nzN5ri1AAEaQCCNABBGoAgDUCQBiBIAxCkAQjSAISDN2VPObeVcGob4rmZxSlTc4dvnHe0GxJYRBqAIA1AkAYgSAMQpAEI0gAEaQCCNADhA6ch7+28SfnzZhbPeePe0J3f5D2nBiBIAxCkAQjSAARpAII0AEEagCANQJAGIBychrQrcYOp6c833sG98x7tqSfWqQEI0gAEaQCCNABBGoAgDUCQBiBIAxCkAQhf13VNf4YwNQE2NQ839co7b38+Z+dm0J2cGoAgDUCQBiBIAxCkAQjSAARpAII0AEEagLB0N+Qbp/SmdhZ+nnOTo2/cVzr16zs1AEEagCANQJAGIEgDEKQBCNIABGkAgjQA4eA05Btn+N54o/G5Wbqds6FT73tuCnPnrKRTAxCkAQjSAARpAII0AEEagCANQJAGIEgDEJbuhtzpyeTZ1ObInb/Czt2fO3/fKU4NQJAGIEgDEKQBCNIABGkAgjQAQRqAIA1AODgNeW/n9NjUNsSp3YGft8/y3s6nbienBiBIAxCkAQjSAARpAII0AEEagCANQJAGIIxNQ947N6W3cyvhzvedmqQ8dyf1OW+cSb3n1AAEaQCCNABBGoAgDUCQBiBIAxCkAQjSAISl05D8LE/m8Kam9M7twnzi3IzmzllJpwYgSAMQpAEI0gAEaQCCNABBGoAgDUCQBiCYhvxppm7ZnrLz/u433sFtNyTwGtIABGkAgjQAQRqAIA1AkAYgSAMQpAEIX9d1HXrpqbm0J8595qm7v7/brzA1k/rG7/meUwMQpAEI0gAEaQCCNABBGoAgDUCQBiBIAxDGdkPu3If3xOfNO05NFn7efOcTU3+vUwMQpAEI0gAEaQCCNABBGoAgDUCQBiBIAxAO7oYE3supAQjSAARpAII0AEEagCANQJAGIEgDEKQBCNIABGkAgjQAQRqAIA1AkAYgSAMQpAEI0gAEaQCCNABBGoAgDUCQBiBIAxCkAQjSAARpAII0AEEagPAva9gDhCccRNYAAAAASUVORK5CYII=" alt="LINE 官方帳號 QR Code" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <strong>臺南市織英教育與公益協會</strong>
-      <span>Tainan Chihying Education and Public Welfare Association</span>
-      <small>© 2022 織英教育與公益協會. All Rights Reserved.</small>
-    </div>
-  </footer>
-
-  <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    window.addEventListener("pageshow", (event) => {
-      const navEntry = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
-      const isReload = navEntry ? navEntry.type === "reload" : performance.navigation && performance.navigation.type === 1;
-
-      if (!location.hash && (event.persisted || isReload)) {
-        setTimeout(() => window.scrollTo(0, 0), 0);
+<script>
+  /* 滾動偵測 JS：當元素滑入螢幕時自動加上 .visible 觸發細緻 CSS 動態 */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
-
-    const revealSections = document.querySelectorAll(".reveal-section");
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.08 }
-      );
-
-      revealSections.forEach((section) => revealObserver.observe(section));
-    } else {
-      revealSections.forEach((section) => section.classList.add("is-visible"));
-    }
-
-    const counters = document.querySelectorAll(".counter");
-    let counterStarted = false;
-
-    function animateCounter(counter) {
-      const target = Number(counter.dataset.num);
-      const duration = 1200;
-      const startTime = performance.now();
-
-      counter.textContent = "0";
-
-      function update(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(target * eased);
-        counter.textContent = current.toLocaleString("zh-TW");
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          counter.textContent = target.toLocaleString("zh-TW");
-        }
-      }
-
-      requestAnimationFrame(update);
-    }
-
-    function startCounters() {
-      if (counterStarted || !counters.length) return;
-      counterStarted = true;
-      counters.forEach(animateCounter);
-    }
-
-    const impactSection = document.querySelector("#impact");
-
-    if (impactSection && "IntersectionObserver" in window) {
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            startCounters();
-            counterObserver.unobserve(impactSection);
-          }
-        },
-        { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
-      );
-
-      counterObserver.observe(impactSection);
-    }
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!impactSection || counterStarted) return;
-        const rect = impactSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.86 && rect.bottom > 0) {
-          startCounters();
-        }
-      },
-      { passive: true }
-    );
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var brand = document.querySelector(".brand");
-      if (!brand) return;
-
-      brand.addEventListener("click", function (event) {
-        event.preventDefault();
-        history.replaceState(null, "", window.location.pathname + window.location.search);
-        document.documentElement.style.scrollBehavior = "auto";
-        if (document.body) document.body.style.scrollBehavior = "auto";
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        document.documentElement.scrollTop = 0;
-        if (document.body) document.body.scrollTop = 0;
-      });
-    });
-  </script>
-
+  }, { 
+    threshold: 0.05,
+    rootMargin: "0px 0px -10px 0px"
+  });
+  
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
