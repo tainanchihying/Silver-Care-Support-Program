@@ -570,8 +570,22 @@
     font-weight: 700;
     color: var(--orange);
     margin: 10px 0 6px;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
   }
-  .plan-price span { font-size: 16px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
+  .plan-price span {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-family: var(--sans);
+    letter-spacing: 0;
+  }
+  @media (min-width: 981px) {
+    #plans .container { max-width: 1180px; }
+    .plan-body { padding: 24px 20px; }
+    .plan-price { font-size: 29px; }
+    .plan-price span { font-size: 14px; }
+  }
   .plan-desc { font-size: 16px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.6; }
   .plan-breakdown {
     background: var(--cream);
