@@ -1414,11 +1414,7 @@
         width: calc(100% - 22px);
       }
 
-      .brand-name span {
-        display: none;
-      }
-
-      .hero-banner {
+.hero-banner {
         min-height: 570px;
       }
 
@@ -1488,64 +1484,7 @@
     }
 
 
-    /* v13 final mobile fixes */
-    .mobile-title {
-      display: none;
-    }
-
-    @media (max-width: 640px) {
-      .desktop-title {
-        display: none;
-      }
-
-      .mobile-title {
-        display: inline;
-      }
-
-      .hero-impact h2 {
-        font-size: 25px !important;
-        line-height: 1.45 !important;
-        letter-spacing: 0 !important;
-      }
-
-      .hero-mini-grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-        max-width: none !important;
-        width: 100% !important;
-        margin-top: 20px !important;
-      }
-
-      .hero-mini-card {
-        min-width: 0 !important;
-        display: block !important;
-        text-align: center !important;
-        padding: 11px 5px !important;
-        border-radius: 14px !important;
-      }
-
-      .hero-mini-card strong {
-        display: block !important;
-        font-size: 17px !important;
-        line-height: 1.2 !important;
-        margin-bottom: 3px !important;
-      }
-
-      .hero-mini-card span {
-        display: block !important;
-        font-size: 12px !important;
-        line-height: 1.25 !important;
-        white-space: nowrap !important;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .hero-impact h2 {
-        font-size: 23px !important;
-      }
-
-      .hero-mini-grid {
+.hero-mini-grid {
         gap: 6px !important;
       }
 
@@ -1562,6 +1501,126 @@
       }
     }
 
+
+    /* v14 mobile final override */
+    .mobile-title {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .brand-name span {
+        display: block !important;
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+        color: var(--text-soft) !important;
+        max-width: 250px !important;
+        white-space: normal !important;
+      }
+
+      .brand-name strong {
+        font-size: 13.5px !important;
+        line-height: 1.3 !important;
+      }
+
+      .brand-logo {
+        width: 44px !important;
+        height: 36px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .desktop-title {
+        display: none !important;
+      }
+
+      .mobile-title {
+        display: inline !important;
+      }
+
+      .hero-impact h2,
+      .impact-closing p {
+        line-height: 1.45 !important;
+        letter-spacing: 0 !important;
+      }
+
+      .hero-impact h2 {
+        font-size: 25px !important;
+      }
+
+      .impact-closing p {
+        font-size: 25px !important;
+      }
+
+      .hero-impact .hero-mini-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 20px !important;
+      }
+
+      .hero-impact .hero-mini-card {
+        display: block !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        padding: 11px 5px !important;
+        border-radius: 14px !important;
+        background: rgba(255, 255, 255, 0.72) !important;
+        border: 1px solid rgba(42, 91, 140, 0.1) !important;
+        box-shadow: 0 8px 16px rgba(38, 50, 56, 0.04) !important;
+      }
+
+      .hero-impact .hero-mini-card strong {
+        display: block !important;
+        font-size: 17px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 3px !important;
+        color: var(--chihying-orange) !important;
+      }
+
+      .hero-impact .hero-mini-card span {
+        display: block !important;
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+        white-space: nowrap !important;
+        color: var(--text-soft) !important;
+        font-weight: 800 !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand-name strong {
+        font-size: 12.5px !important;
+      }
+
+      .brand-name span {
+        font-size: 9px !important;
+        max-width: 225px !important;
+      }
+
+      .hero-impact h2,
+      .impact-closing p {
+        font-size: 23px !important;
+      }
+
+      .hero-impact .hero-mini-grid {
+        gap: 6px !important;
+      }
+
+      .hero-impact .hero-mini-card {
+        padding: 10px 3px !important;
+      }
+
+      .hero-impact .hero-mini-card strong {
+        font-size: 16px !important;
+      }
+
+      .hero-impact .hero-mini-card span {
+        font-size: 11px !important;
+      }
+    }
+
   </style>
   <!-- 首頁主視覺圖已內嵌在 CSS，測試時不需要另外上傳 banner 圖。 -->
   <!-- v6：導覽左右貼齊、聯絡改 LINE 按鈕、手機版與成果數字已修正。 -->
@@ -1569,6 +1628,7 @@
   <!-- v8：LINE QR Code 已內嵌，不需要另外上傳 line-qr.png。 -->
   <!-- v9：電腦版恢復 LINE QR 卡片，手機版保留 LINE 按鈕。 -->
   <!-- v13：手機版三小卡一排、標語分行、重整回頂端、地址連到織英 Google Maps 搜尋。 -->
+  <!-- v14：手機標題回頂端、英文名稱、地址、三小卡一排、底部標語皆修正。 -->
 </head>
 
 <body>
@@ -1863,7 +1923,7 @@
               <div>
                 <strong>地址</strong>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E7%B9%94%E8%8B%B1%E6%95%99%E8%82%B2%E8%88%87%E5%85%AC%E7%9B%8A%E5%8D%94%E6%9C%83"
+                  href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8D%97%E5%B8%82%E7%B9%94%E8%8B%B1%E6%95%99%E8%82%B2%E8%88%87%E5%85%AC%E7%9B%8A%E5%8D%94%E6%9C%83%20%E8%87%BA%E5%8D%97%E5%B8%82%E6%B0%B8%E5%BA%B7%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF12%E8%99%9F17%E6%A8%93%E4%B9%8B5"
                   target="_blank"
                   rel="noopener"
                 >
@@ -2009,6 +2069,23 @@
         if (resetCount >= 12) clearInterval(timer);
       }, 150);
     })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var brand = document.querySelector(".brand");
+      if (!brand) return;
+
+      brand.addEventListener("click", function (event) {
+        event.preventDefault();
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+        document.documentElement.style.scrollBehavior = "auto";
+        if (document.body) document.body.style.scrollBehavior = "auto";
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        document.documentElement.scrollTop = 0;
+        if (document.body) document.body.scrollTop = 0;
+      });
+    });
   </script>
 
 </body>
