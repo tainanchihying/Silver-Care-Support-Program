@@ -397,9 +397,9 @@
   .plan-price span { font-size: 14px; font-weight: 400; color: var(--text-muted); font-family: var(--sans); }
   .plan-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; min-height: 45px; }
   .plan-breakdown { background: var(--cream); border-radius: var(--radius-sm); padding: 14px 14px; margin-bottom: 20px; margin-top: auto; }
-  .plan-breakdown-row { display: flex; justify-content: space-between; font-size: 14px; padding: 4px 0; }
+  .plan-breakdown-row { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; padding: 4px 0; }
   .plan-breakdown-row .label-text { color: var(--text-muted); }
-  .plan-breakdown-row .label-value { font-weight: 500; color: var(--charcoal); }
+  .plan-breakdown-row .label-value { font-weight: 500; color: var(--charcoal); white-space: nowrap; flex-shrink: 0; }
   .plan-breakdown-row .label-value.orange { color: var(--orange); }
   .plan-breakdown-divider { border: none; border-top: 1px solid var(--cream-dark); margin: 8px 0; }
   .plan-cta { display: block; text-align: center; background: var(--charcoal); color: var(--white); font-size: 15px; font-weight: 500; padding: 12px; border-radius: var(--radius-sm); text-decoration: none; transition: opacity 0.2s; }
@@ -610,8 +610,8 @@
         <div class="case-row"><span class="label-text">總費用</span><span class="amount">30,000 元</span></div>
         <div class="case-row deduct"><span class="label-text">政府補助</span><span class="amount">－11,200 元</span></div>
         <div class="case-row"><span class="label-text">家庭自付缺口</span><span class="amount" style="color:#C0422A;font-weight:600;">18,800 元</span></div>
-        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－10,000 元</span></div>
-        <div class="case-row result"><span class="label-text">最後負擔</span><span class="amount">8,800 元</span></div>
+        <div class="case-row support"><span class="label-text">本計畫支持</span><span class="amount">－12,000 元</span></div>
+        <div class="case-row result"><span class="label-text">最後負擔</span><span class="amount">6,800 元</span></div>
       </div>
       <div class="case-card ani-item-right delay-2">
         <div class="case-card-header">
@@ -648,25 +648,22 @@
       </div>
     </div>
     <div class="subsidy-note mt-16 ani-item-up delay-3">
-      <p>補助對象僅限<strong>低收入戶、中低收入戶</strong>（需經政府核定），依個案實際自付額核定，不重複補助政府已補助部分。</p>
+      <p>補助對象僅限<strong>低收入戶、中低收入戶</strong>（需經政府核定），兩類身分統一適用同一補助上限，並依個案實際自付缺口核定，不重複補助政府已補助部分。</p>
       <table class="subsidy-table mt-16">
         <thead>
           <tr>
-            <th>身分別</th>
-            <th>輔具類上限</th>
-            <th>環改類上限</th>
+            <th>補助類別</th>
+            <th>補助上限</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>低收入戶</td>
-            <td class="amt">最高 5,000 元</td>
-            <td class="amt">最高 10,000 元</td>
+            <td>輔具類</td>
+            <td class="amt">每案最高 6,000 元</td>
           </tr>
           <tr>
-            <td>中低收入戶</td>
-            <td class="amt">最高 3,000 元</td>
-            <td class="amt">最高 8,000 元</td>
+            <td>環改類</td>
+            <td class="amt">每案最高 12,000 元</td>
           </tr>
         </tbody>
       </table>
@@ -687,7 +684,7 @@
       <div class="fee-intro-text">
         <h3>85% 直接補助精準到位</h3>
         <p>直接用於低收入戶、中低收入戶的輔具與居家環改自付缺口。</p>
-        <p style="margin-top:10px;">15% 為執行服務費，用來支撐補助能真正落地的專業工作——這不是行政費，而是讓善意真正抵達的成本。</p>
+        <p style="margin-top:10px;">15% 為執行費，用來支撐補助能真正落地的專業工作——這不是行政費，而是讓善意真正抵達的成本。</p>
       </div>
     </div>
     <div class="fee-items">
@@ -748,7 +745,7 @@
         <div class="timeline-badge">3</div>
         <div class="timeline-panel">
           <h4>補助審核</h4>
-          <p>藥局檢附資料向協會送件，協會依資格、自付額與補助上限審核</p>
+          <p>藥局檢附資料向協會送件，協會依資格、自付缺口與補助上限審核</p>
         </div>
       </li>
       <li class="timeline-item ani-item-right delay-4">
@@ -819,7 +816,7 @@
       <div class="cycle-node ani-item-up delay-3">
         <span class="cycle-node-icon">🏡</span>
         <h4>長者與家庭受益</h4>
-        <p>長者更快取得輔具與環改，減輕家庭因自付額造成的壓力</p>
+        <p>長者更快取得輔具與環改，減輕家庭因自付缺口造成的壓力</p>
       </div>
       <div class="cycle-node ani-item-up delay-4">
         <span class="cycle-node-icon">🌱</span>
@@ -837,8 +834,8 @@
     <p class="section-sub">四種方案，從個人、小型社團到企業年度ESG專案，都能找到合適的切入點。</p>
     
     <div class="plans-note ani-item-up delay-1">
-      <strong>所有方案：85% 實際補助金 ＋ 15% 執行服務費</strong><br>
-      <p style="margin-top: 6px; font-size: 15px;">方案金額含稅，透明公開。15% 執行服務費涵蓋資料審核、資源媒合、補助核定、撥款管理、核銷整理、計畫管理與執行紀錄等工作，確保補助資源能被清楚管理、精準使用。</p>
+      <strong>所有方案：85% 補助金 ＋ 15% 執行費</strong><br>
+      <p style="margin-top: 6px; font-size: 15px;">方案金額含稅，透明公開。15% 執行費涵蓋資料審核、資源媒合、補助核定、撥款管理、核銷整理與計畫管理等工作，確保補助資源能被清楚管理、精準使用。</p>
     </div>
     
     <div class="plan-cards">
@@ -849,12 +846,12 @@
           <p class="plan-desc">適合個人、小型社團，或初次想參與公益的夥伴。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-text">補助金（85%）</span>
               <span class="label-value orange">42,500 元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-text">執行費（15%）</span>
               <span class="label-value">7,500 元</span>
             </div>
           </div>
@@ -869,12 +866,12 @@
           <p class="plan-desc">適合初次合作的企業或小型團體。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-text">補助金（85%）</span>
               <span class="label-value orange">85,000 元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-text">執行費（15%）</span>
               <span class="label-value">15,000 元</span>
             </div>
           </div>
@@ -889,12 +886,12 @@
           <p class="plan-desc">適合企業年度公益專案，標準型合作方案。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-text">補助金（85%）</span>
               <span class="label-value orange">255,000 元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-text">執行費（15%）</span>
               <span class="label-value">45,000 元</span>
             </div>
           </div>
@@ -909,12 +906,12 @@
           <p class="plan-desc">適合中小企業、社團年度 ESG 或社會服務主題。</p>
           <div class="plan-breakdown">
             <div class="plan-breakdown-row">
-              <span class="label-text">實際補助金（85%）</span>
+              <span class="label-text">補助金（85%）</span>
               <span class="label-value orange">425,000 元</span>
             </div>
             <hr class="plan-breakdown-divider">
             <div class="plan-breakdown-row">
-              <span class="label-text">執行服務費（15%）</span>
+              <span class="label-text">執行費（15%）</span>
               <span class="label-value">75,000 元</span>
             </div>
           </div>
